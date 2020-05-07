@@ -1,0 +1,17 @@
+.personal-data
+  .card
+    .card-header
+      h3(data-i18n='personaldata') Personal Data
+    .card-body
+      +stat-block('Primary Alias', 'primary_alias')
+      +stat-block('Metatype', 'metatype')
+      +stat-block('Ethnicity', 'ethnicity')
+      +stat-block('Age', 'age')
+      +stat-block('Sex', 'sex')
+      +stat-block('Height', 'height')
+      +stat-block('Weight', 'weight')
+      +stat-block-number('Reputation', 'reputation')
+      +stat-block-number('Heat', 'heat')
+      +stat-block-number('Karma', 'karma')
+      +stat-block-number('Total Karma', 'tkarma')
+      +stat-block('Misc', 'misc')

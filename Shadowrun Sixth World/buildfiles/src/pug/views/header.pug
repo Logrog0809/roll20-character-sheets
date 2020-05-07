@@ -1,0 +1,21 @@
+mixin navbutton(view, title)
+  button(type='action' data-view=view class='nav-control-'+view name='act_showview_'+view data-i18n=title)= title
+
+.view.sr6cs-header
+  .header-block
+    h1(data-i18n='shadowrun-6e-charsheet') Shadowrun 6e Character Sheet
+    .character-name
+      label.is-flex.is-vcentered
+        span(data-i18n='charactername') Character
+        input(name='attr_character_name' type='text' readonly tabindex='-1')
+  .nav-block
+    +navbutton('overview', 'Overview')
+    +navbutton('character', 'Character')
+    +navbutton('background', 'Background')
+    +navbutton('gear', 'Gear')
+    +navbutton('augments', 'Augments')
+    +navbutton('magic', 'Magic')
+    +navbutton('matrix', 'Matrix')
+    +navbutton('social', 'Social')
+    +navbutton('vehicle', 'Vehicle')
+    +navbutton('settings', 'Settings')

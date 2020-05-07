@@ -1,0 +1,41 @@
+{
+  "name": "roll20-shadowrun-6e-charsheet",
+  "version": "1.0.0",
+  "description": "A character sheet for Shadowrun 6e for use in Roll20",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeacula/roll20-shadowrun-6e-charsheet.git"
+  },
+  "author": "Jack Timmons aka Codeacula <codeacula@codeacula.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeacula/roll20-shadowrun-6e-charsheet/issues"
+  },
+  "homepage": "https://github.com/codeacula/roll20-shadowrun-6e-charsheet#readme",
+  "devDependencies": {
+    "apply-loader": "^2.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.2",
+    "eslint": "^6.8.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "html-webpack-plugin": "^4.2.0",
+    "jest": "^25.4.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {}
+}

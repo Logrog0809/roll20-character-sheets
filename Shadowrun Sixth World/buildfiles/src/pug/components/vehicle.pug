@@ -1,0 +1,20 @@
+- var base='vehicle'
+
+.component.vehicles
+  h3(data-i18n='vehicles') Vehicles
+
+  ul(class=base+'-header')
+    +repeating-li(base, 'Vehicle', 'vehicle')
+    +repeating-li(base, 'Acceleration', 'acceleration')
+    +repeating-li(base, 'Top Speed', 'top_speed')
+    +repeating-li(base, 'Armor', 'armor')
+    +repeating-li(base, 'Sensor', 'sensor')
+    +repeating-li(base, 'Handling', 'handling')
+    +repeating-li(base, 'Speed Interval', 'speed_interval')
+    +repeating-li(base, 'Body', 'body')
+    +repeating-li(base, 'Pilot', 'pilot')
+    +repeating-li(base, 'Seats', 'seats')
+    +repeating-li(base, 'Notes', 'notes')
+
+  fieldset(class='repeating_'+base)
+    +add-repeating-inputs(base, ['vechile', 'acceleration', 'top_speed', 'armor', 'sensor', 'handling', 'speed_interval', 'body', 'pilot', 'seats', 'notes'])

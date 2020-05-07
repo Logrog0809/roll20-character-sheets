@@ -1,0 +1,14 @@
+include ../mixins.pug
+.knowledge
+  .card
+    .card-header
+      h3(data-i18n='knowledge') Knowledge
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-12(data-i18n='topic') Topic
+        .is-flex
+          fieldset(class='repeating_knowledge')
+            .row.is-vcentered
+              .col-12
+                input.input(name='attr_topic' type='text')

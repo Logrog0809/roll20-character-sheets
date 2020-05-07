@@ -1,0 +1,67 @@
+mixin attr-block(title, attrname)
+  .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
+    label.is-flex.col-6.is-vcentered
+      span.is-half(data-i18n=attrname)= title
+      span.is-half
+        input.input(name='attr_'+attrname type='number' min='0' value='0')
+    .col-1.text-center
+      span +
+    .col-2
+      input.input(name='attr_'+attrname+'_bonus' type='number' min='0' value='0')
+    .col-1.text-center
+      span &#61;
+    .col-2
+      input.input(name='attr_auto_'+attrname+'_total' value='0' readonly tabindex='-1')
+
+mixin attr-block-only-bonus(title, attrname)
+  .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
+    label.is-flex.col-6.is-vcentered
+      span.is-half(data-i18n=attrname)= title
+      span.is-half
+        input.input(name='attr_auto_'+attrname type='number' value='0' readonly tabindex='-1')
+    .col-1.text-center
+      span +
+    .col-2
+      input.input(name='attr_'+attrname+'_bonus' type='number' min='0' value='0')
+    .col-1.text-center
+      span &#61;
+    .col-2
+      input.input(name='attr_auto_'+attrname+'_total' value='0' readonly tabindex='-1')      
+
+mixin attr-block-no-bonus(title, attrname)
+  .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
+    label.is-flex.col-6.is-vcentered
+      span.is-half(data-i18n=attrname)= title
+      span.is-half
+        input.input(name='attr_'+attrname type='number' min='0' value='0')&attributes(attributes)
+    .col-1
+    .col-2
+    .col-1
+    .col-2
+    
+
+.attributes
+  .card
+    .card-header
+      h3(data-i18n='attributes') Attributes
+    .card-body
+      .is-flex.is-paddingless
+        .col-6 Attribute
+        .col-1
+        .col-2 Bonus
+        .col-1
+        .col-2 Total
+      +attr-block('Body', 'body')
+      +attr-block('Agility', 'agility')
+      +attr-block('Reaction', 'reaction')
+      +attr-block('Strength', 'strength')
+      +attr-block('Willpower', 'willpower')
+      +attr-block('Logic', 'logic')
+      +attr-block('Intuition', 'intuition')
+      +attr-block('Charisma', 'charisma')
+      +attr-block-no-bonus('Edge', 'edge')
+      +attr-block-only-bonus('Unarmed', 'unarmed')
+      +attr-block-no-bonus('Essence', 'essence')(value='6')
+      +attr-block-no-bonus('Magic', 'magic')
+      +attr-block-no-bonus('Resonance', 'resonance')
+

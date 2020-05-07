@@ -1,0 +1,166 @@
+@use '../variables' as *;
+
+$sheet-namespace: '' !default;
+$background-color: #222222;
+$card-background-color: #444;
+$font-color: #fff;
+$header-background: #303030;
+$info-color: #3498DB;
+$info-color-hover: #2384c6;
+$input-border: #222;
+$input-color: #222;
+$nav-background: #00bc8c;
+$nav-background-active: #00efb2;
+$primary-color: #375a7f;
+$primary-color-hover: #2b4764;
+$row-light-background: #373737;
+$success-color: #00bc8c;
+$success-color-hover: #009670;
+
+input[name='attr_show_darkly']:checked ~ .#{$sheet-namespace}darkly-theme {
+  background-color: $background-color;
+  color: $font-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $font-color;
+  }
+
+  label {
+    color: $font-color;
+  }
+
+  .#{$sheet-namespace}checkbox label input ~ span {
+    background-color: white;
+  }
+
+  .#{$sheet-namespace}checkbox label input:checked ~ span {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  button {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 0.25em;
+    color: $font-color;
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 0.375rem 0.75em;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: $primary-color-hover;
+      text-decoration: none;
+    }
+
+    &.repcontrol_add,
+    &.repcontrol_edit {
+      background-image: none;
+      color: transparent;
+      outline: none;
+      position: relative;
+      text-shadow: none;
+      width: 2em;
+  
+      &:hover {
+        background-image: none;
+      }
+  
+      &::after {
+        left: 0.9em;
+        position: absolute;
+      }
+    }
+
+    &.repcontrol_add {
+      &::after {
+        content: 'New'
+      }
+    }
+
+    &.repcontrol_edit {
+      &::after {
+        content: 'Edit'
+      }
+    }
+
+    &.repcontrol_add,
+    &.repcontrol_edit {
+      &::after {
+        color: $font-color;
+      }
+    }
+
+    &.repcontrol_add {
+      background-color: $success-color;
+
+      &:hover {
+        background-color: $success-color-hover;
+      }
+    }
+
+    &.repcontrol_edit {
+      background-color: $info-color;
+
+      &:hover {
+        background-color: $info-color-hover;
+      }
+    }
+  }
+
+  input, select {
+    border: 1px solid $input-border;
+    color: $input-color;
+  }
+
+  @each $page in $pages {
+    input[name=attr_show_view_#{$page}]:checked ~ .#{$sheet-namespace}sr6cs-header .#{$sheet-namespace}nav-control-#{$page} {
+     background-color: $nav-background-active;
+    }
+  }
+
+  .#{$sheet-namespace}header-block {
+    background-color: $header-background;
+  }
+
+  .#{$sheet-namespace}nav-block {
+    background: $nav-background;
+
+    button {
+      background: $nav-background;
+      border: none;
+      border-radius: 0px;
+      display: block;
+
+      &:hover {
+        background-color: $nav-background-active;
+      }
+    }
+  }
+
+  .#{$sheet-namespace}card {
+    background-color: $header-background;
+    border: 1px solid $primary-color;
+
+    .#{$sheet-namespace}card-header {
+      background-color: $card-background-color;
+    }
+  }
+
+  .#{$sheet-namespace}flex-table {
+    .#{$sheet-namespace}flex-table-header {
+      border-top: 2px solid $card-background-color;
+      border-bottom: 1px solid $card-background-color;
+    }
+
+    .#{$sheet-namespace}row {
+      border-bottom: 1px solid $card-background-color;
+
+      .#{$sheet-namespace}light-bg {
+        background-color: $row-light-background;
+      }
+    }
+  }
+}

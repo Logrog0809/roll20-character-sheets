@@ -1,0 +1,25 @@
+.qualities
+  .card
+    .card-header
+      h3 Qualities
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-4(data-i18n='quality') Quality
+          .col-2(data-i18n='karma') Karma
+          .col-5(data-i18n='notes') Notes
+          .col-1(data-i18n='positive_a') Pos?
+        .is-flex
+          fieldset(class='repeating_qualities')
+            .row.is-vcentered
+              .col-4
+                input.input(name='attr_quality' type='text')
+              .col-2
+                input.input(name='attr_karma' type='number' min='0' value='0')
+              .col-5
+                input.input(name='attr_notes' type='text')
+              .col-1
+                .checkbox
+                  label
+                    input(name='attr_positive' type='checkbox' value='1')
+                    span

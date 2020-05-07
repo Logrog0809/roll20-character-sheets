@@ -1,0 +1,21 @@
+include ./mixins.pug
+input.is-hidden(type='checkbox' name='attr_show_darkly' value='1' checked)
+input.is-hidden(type='checkbox' name='attr_show_minty' value='1')
++hidden-attr('sheet_version')(value='1.0')
+
+.sr6cs.darkly-theme.minty-theme
+  each val in ['overview', 'character', 'gear', 'augments', 'magic', 'matrix', 'social', 'vehicle', 'settings']
+    +hidden-attr-check('show_view_'+val)
+
+  include ./views/header.pug
+  include ./views/overview.pug
+  include ./views/character.pug
+  include ./views/gear.pug
+  include ./views/augments.pug
+  include ./views/magic.pug
+  include ./views/matrix.pug
+  include ./views/social.pug
+  include ./views/vehicle.pug
+  include ./views/settings.pug
+script(type='text/worker')
+  include ../js/main.js

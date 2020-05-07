@@ -1,0 +1,10 @@
+- var base='melee-weapon'
+
+.component(class='melee-weapons')
+  h3(data-i18n='melee-weapons') Melee Weapons
+  ul(class=base+'-header')
+    +repeating-li(base, 'Weapon', 'name', 'weapon')
+    +repeating-li(base, 'DV', 'dv')
+    +repeating-li(base, 'Close', 'close')
+  fieldset(class='repeating_'+base)
+    +add-repeating-inputs(base, ['weapon', 'dv', 'close'])

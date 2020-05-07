@@ -1,0 +1,62 @@
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+  $margins: 1, 2, 3, 4, 5;
+  @each $col in $columns {
+    .#{$sheet-namespace}col-#{$col} {
+      box-sizing: border-box;
+      padding: 0.75em;
+      width: calc((100% / 12) * #{$col});
+    }
+
+    .#{$sheet-namespace}is-flex .#{$sheet-namespace}col-#{$col} {
+      width: calc((100% / 12) * #{$col});
+    }
+
+    .#{$sheet-namespace}is-paddingless .#{$sheet-namespace}col-#{$col} {
+      padding: 0;
+    }
+  }
+
+  @each $margin in $margins {
+    .#{$sheet-namespace}mb-#{$margin} {
+      margin-bottom: #{$margin * .5}em;
+    }
+    .#{$sheet-namespace}ml-#{$margin} {
+      margin-bottom: #{$margin * .5}em;
+    }
+    .#{$sheet-namespace}mr-#{$margin} {
+      margin-bottom: #{$margin * .5}em;
+    }
+    .#{$sheet-namespace}mt-#{$margin} {
+      margin-bottom: #{$margin * .5}em;
+    }
+  }
+
+  .#{$sheet-namespace}col-auto {
+    flex: 1 1 auto;
+    padding: 0.75em;
+  }
+
+  .#{$sheet-namespace}is-paddingless .#{$sheet-namespace}col-auto {
+    padding: 0;
+  }
+
+  .#{$sheet-namespace}is-flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    .#{$sheet-namespace}is-half {
+      width: 50%;
+    }
+  }
+
+  .#{$sheet-namespace}is-half {
+    width: 50%;
+  }
+
+  .#{$sheet-namespace}is-vcentered {
+    align-items: center;
+  }
+}

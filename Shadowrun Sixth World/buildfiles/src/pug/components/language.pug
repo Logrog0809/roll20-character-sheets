@@ -1,0 +1,21 @@
+include ../mixins.pug
+.language
+  .card
+    .card-header
+      h3(data-i18n='language') Language
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-6(data-i18n='language') Language
+          .col-6(data-i18n='level') Level
+        .is-flex
+          fieldset(class='repeating_language')
+            .row.is-vcentered
+              .col-6
+                input.input(name='attr_language' type='text')
+              .col-6
+                select.input(name='attr_level')
+                  option(value='1') Basic
+                  option(value='2') Specialist
+                  option(value='3') Expert
+                  option(value='4') Native

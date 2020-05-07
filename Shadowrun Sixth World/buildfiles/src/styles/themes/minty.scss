@@ -1,0 +1,60 @@
+$sheet-namespace: '' !default;
+$background-color: #fff;
+$font-color: #888;
+$header-background: #78C2AD;
+$input-border: #ced4da;
+$input-color: #5a5a5a;
+$primary-color: #55b298;
+$primary-color-hover: #5eb69d;
+
+input[name='attr_show_minty']:checked ~ .#{$sheet-namespace}minty-theme {
+  background-color: $background-color;
+  color: $font-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $font-color;
+  }
+
+  label {
+    color: $font-color;
+  }
+
+  button {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 0.25em;
+    color: $font-color;
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 0.375rem 0.75em;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: $primary-color-hover;
+      text-decoration: none;
+    }
+  }
+
+  input, select {
+    border: 1px solid $input-border;
+    color: $input-color;
+  }
+
+  .#{$sheet-namespace}header-block {
+    background-color: $header-background;
+
+    h1, label {
+      color: white;
+    }
+  }
+
+  .#{$sheet-namespace}nav-block {
+    button {
+      border: none;
+      border-radius: 0px;
+      display: block;
+    }
+  }
+}

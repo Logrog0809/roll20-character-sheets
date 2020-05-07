@@ -1,0 +1,36 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  font-family: $base-font-family;
+  font-size: 16px;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font-family;
+  }
+
+  h3, h4, h5, h6 {
+    margin: 0px;
+  }
+
+  button {
+    font-family: $base-font-family;
+  }
+
+  input[readonly] {
+    background: #ddd;
+    cursor: not-allowed;
+  }
+
+  label {
+    margin: 0px;
+    padding: 0px;
+    font-size: .9em;
+    font-weight: normal;
+  }
+
+  .#{$sheet-namespace}text-center {
+    text-align: center;
+  }
+}

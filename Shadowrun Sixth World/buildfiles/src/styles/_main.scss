@@ -1,0 +1,44 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+
+body {
+  margin: 0px;
+  padding: 0px;
+  min-width: 500px;
+}
+
+.#{$sheet-namespace}is-hidden {
+  display: none;
+}
+
+.#{$sheet-namespace}sr6cs {
+  box-sizing: border-box;
+  min-width: 800px;
+  text-rendering: optimizeLegibility;
+
+  h3, h4, h5, h6 {
+    margin: 0px;
+  }
+
+  .#{$sheet-namespace}is-hidden {
+    display: none;
+  }
+
+  .#{$sheet-namespace}view {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+
+  @each $page in $pages {
+    .#{$sheet-namespace}view-#{$page} {
+      display: none;
+    }
+
+    input[name='attr_show_view_#{$page}']:checked ~ .#{$sheet-namespace}view-#{$page} {
+      display: flex;
+    }
+  }
+}

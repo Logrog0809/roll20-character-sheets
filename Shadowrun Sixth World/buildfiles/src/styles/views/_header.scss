@@ -1,0 +1,31 @@
+@use '../variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}view.#{$sheet-namespace}sr6cs-header {
+  display: flex;
+  padding: 0;
+
+  .#{$sheet-namespace}header-block {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2em;
+    width: 100%;
+
+    h1 {
+      font-size: 1em;
+    }
+
+    input {
+      display: inline;
+      margin-left: 2em;
+    }
+  }
+
+  .#{$sheet-namespace}nav-block {
+    display: flex;
+    padding: 0em 1em;
+    width: 100%;
+  }
+}
