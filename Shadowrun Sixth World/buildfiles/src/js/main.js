@@ -68,12 +68,14 @@ function updateView(view) {
   const viewAttrs = {};
   views.forEach((val) => viewAttrs[`show_view_${val}`] = 0);
   viewAttrs[`show_view_${view}`] = 1;
+  log(viewAttrs);
   setAttrs(viewAttrs);
 }
 
 on('change:selected_theme_val', selectTheme);
 on('sheet:opened', sheetOpened);
 
-attributes.forEach(attr => on(`change:${attr.name}`, (reve) => updateAttribute(attr, reve)));
-attributes.filter(x => x.hasBonus).forEach(attr => on(`change:${attr.name}_${magicStrings.bonus}`, (reve) => updateBonusAttr(attr, reve)));
+var attrArray = Object.values(attributes);
+attrArray.forEach(attr => on(`change:${attr.name}`, (reve) => updateAttribute(attr, reve)));
+attrArray.filter(x => x.hasBonus).forEach(attr => on(`change:${attr.name}_${magicStrings.bonus}`, (reve) => updateBonusAttr(attr, reve)));
 views.forEach((view) => on(`clicked:showview_${view}`, (reve) => updateView(view, reve)));

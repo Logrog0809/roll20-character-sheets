@@ -33,19 +33,19 @@
                   span.is-half
                     select.input(name='attr_specialization')
                       option(value='') None
-                      option Other
+                      option(value='other') Other
                       each skill in skills
-                        optgroup(data-i18n=skill.name='-u' label=skill.display)
+                        optgroup(label=skill.display data-i18n-label=skill.name+'-u')
                           each spec in skill.specializations
-                            option= spec
+                            option(data-i18n=spec.toLowerCase().replace(/\s/g, '')+'-u' value=spec)= spec
               .col-6.light-bg
                 label.is-flex.is-vcentered
                   span.is-half(data-i18n='expertise-u') Expertise
                   span.is-half
                     select.input(name='attr_expertise')
                       option(value='') None
-                      option Other
+                      option(value='other') Other
                       each skill in skills
-                        optgroup(data-i18n=skill.name='-u' label=skill.display)
+                        optgroup(label=skill.display data-i18n-label=skill.name+'-u')
                           each spec in skill.specializations
-                            option= spec
+                            option(data-i18n=spec.toLowerCase().replace(/\s/g, '')+'-u' value=spec)= spec
