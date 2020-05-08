@@ -1,0 +1,12 @@
+{
+  "agility": { "name":"agility", "display":"Agility", "abbr":"AGI", "type":"physical" },
+  "body": { "name":"body", "display":"Body", "abbr":"BOD", "type":"physical" },
+  "charisma": { "name":"charisma", "display":"Charisma", "abbr":"CHA", "type":"mental" },
+  "intuition": { "name":"intuition", "display":"Intuition", "abbr":"INT", "type":"mental" },
+  "logic": { "name":"logic", "display":"Logic", "abbr":"LOG", "type":"mental" },
+  "magic": { "name":"magic", "display":"Magic", "abbr":"MAG", "type":"none" },
+  "reaction": { "name":"reaction", "display":"Reaction", "abbr":"REA", "type":"physical" },
+  "resonance": { "name":"resonance", "display":"Resonance", "abbr":"RES", "type":"none" },
+  "strength": { "name":"strength", "display":"Strength", "abbr":"STR", "type":"physical" },
+  "willpower": { "name":"willpower", "display":"Willpower", "abbr":"WIL", "type":"mental" }
+}

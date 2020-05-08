@@ -7,7 +7,7 @@ $sheet-namespace: '' !default;
     display: none;
   }
 
-  input.#{$sheet-namespace}input, select.#{$sheet-namespace}input {
+  input.#{$sheet-namespace}input, select.#{$sheet-namespace}input, textarea.#{$sheet-namespace}textarea {
     background-clip: padding-box;
     border-radius: 0.25em;
     display: block;
@@ -19,6 +19,15 @@ $sheet-namespace: '' !default;
     line-height: 1.5;
     padding: 0.375em 0.75em;
     width: 100%;
+  }
+
+  textarea.#{$sheet-namespace}textarea {
+    box-sizing: border-box;
+    font-family: $note-font-family;
+    font-size: 1em;
+    font-weight: 500;
+    height: 6em;
+    resize: vertical;
   }
 
   .#{$sheet-namespace}checkbox {

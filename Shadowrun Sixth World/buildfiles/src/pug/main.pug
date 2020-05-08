@@ -4,11 +4,12 @@ input.is-hidden(type='checkbox' name='attr_show_minty' value='1')
 +hidden-attr('sheet_version')(value='1.0')
 
 .sr6cs.darkly-theme.minty-theme
-  each val in ['overview', 'character', 'gear', 'augments', 'magic', 'matrix', 'social', 'vehicle', 'settings']
+  each val in ['overview', 'character', 'background', 'gear', 'augments', 'magic', 'matrix', 'social', 'vehicle', 'settings']
     +hidden-attr-check('show_view_'+val)
 
   include ./views/header.pug
   include ./views/overview.pug
+  include ./views/background.pug
   include ./views/character.pug
   include ./views/gear.pug
   include ./views/augments.pug

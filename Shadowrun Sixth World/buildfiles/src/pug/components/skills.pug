@@ -2,15 +2,15 @@ include ../mixins.pug
 .skills
   .card
     .card-header
-      h3(data-i18n='skills') Skills
+      h3(data-i18n='skills-u') Skills
     .card-body
       .flex-table
         .flex-table-header
-          .col-4(data-i18n='skill') Skill
-          .col-2(data-i18n='rank') Rank
-          .col-3(data-i18n='attribute') Att
-          .col-1(data-i18n='specialization_a') Spec?
-          .col-2(data-i18n='notes') Notes
+          .col-4(data-i18n='skill-u') Skill
+          .col-2(data-i18n='rank-u') Rank
+          .col-3(data-i18n='attribute-u') Att
+          .col-1(data-i18n='specialization-a') Spec?
+          .col-2(data-i18n='notes-u') Notes
         .is-flex
           fieldset(class='repeating_skills')
             .row.is-vcentered
@@ -21,7 +21,7 @@ include ../mixins.pug
               .col-3
                 select.input(name='attr_attribute')
                   each val in attributes
-                    option(value=val.name data-i18n=val.name)= val.display
+                    option(value=val.name data-i18n=val.name+'-u')= val.display
               .col-1
                 .checkbox
                   label
@@ -32,11 +32,11 @@ include ../mixins.pug
               input.is-hidden(type='checkbox' name='attr_hasspec' value='1' readonly)
               .col-6.light-bg
                 label.is-flex.is-vcentered
-                  span.is-half(data-i18n='specialization') Specialization
+                  span.is-half(data-i18n='specialization-u') Specialization
                   span.is-half
                     input.input(name='attr_specialization' type='text')
               .col-6.light-bg
                 label.is-flex.is-vcentered
-                  span.is-half(data-i18n='expertise') Expertise
+                  span.is-half(data-i18n='expertise-u') Expertise
                   span.is-half
                     input.input(name='attr_expertise' type='text')

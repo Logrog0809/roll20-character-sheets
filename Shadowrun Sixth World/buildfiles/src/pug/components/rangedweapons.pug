@@ -1,15 +1,6 @@
-- var base='ranged-weapon'
 
-.component(class='ranged-weapons')
-  h3(data-i18n='ranged-weapons') Ranged Weapons
-  ul(class=base+'-header')
-    +repeating-li(base, 'Weapon', 'name', 'weapon')
-    +repeating-li(base, 'DV', 'dv')
-    +repeating-li(base, 'Mode', 'mode')
-    +repeating-li(base, 'Close', 'close')
-    +repeating-li(base, 'Near', 'near')
-    +repeating-li(base, 'Far', 'far')
-    +repeating-li(base, 'Extreme', 'extreme')
-    +repeating-li(base, 'Ammo', 'ammo')
-  fieldset(class='repeating_'+base)
-    +add-repeating-inputs(base, ['name', 'dv', 'mode', 'close', 'near', 'fear', 'extreme', 'ammo'])
+.ranged-weapons
+  .card
+    .card-header
+      h3(data-i18n='ranged-weapons-u') Ranged Weapons
+  .card-body

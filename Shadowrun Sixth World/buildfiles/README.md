@@ -1,5 +1,6 @@
 # Shadowrun 6th Edition Character Sheet for Roll20.net
-A character sheet for Shadowrun 6e for use in Roll20
+
+A character sheet for Shadowrun 6e for use in Roll20.
 
 ## Requirements
 
@@ -10,7 +11,8 @@ To work on the project, ensure you have [NodeJS](https://nodejs.org/) installed,
   1. Name all editable fields **attr_[fieldname]**
   2. Name all auto fields **attr_auto_[fieldname]**
   3. Use mixins and small components as much as possible
-  4. Use _a for abbreviations when setings i18n
+  4. End all data-i18n's with a -u, unless they're an abbreviation, then -a
+  5. If you update the JSON file, make sure you update mixins.pug and main.js
 
 ## Legal Stuff
 
