@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const merge = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.common');
@@ -29,7 +28,7 @@ module.exports = merge(common, {
           {
             loader: 'sass-loader',
             options: {
-              prependData: "$sheet-namespace: '';",
+              prependData: '$sheet-namespace: \'\';',
             },
           },
         ],
@@ -45,6 +44,9 @@ module.exports = merge(common, {
       filename: 'index.html',
       template: '!!pug-loader!./src/pug/dev.pug',
       inject: true,
+      templateParameters: {
+        'foo': 'bar'
+      },
     })
   ]
 });

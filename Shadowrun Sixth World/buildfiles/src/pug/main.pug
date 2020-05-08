@@ -4,7 +4,8 @@ input.is-hidden(type='checkbox' name='attr_show_minty' value='1')
 +hidden-attr('sheet_version')(value='1.0')
 
 .sr6cs.darkly-theme.minty-theme
-  each val in ['overview', 'character', 'background', 'gear', 'augments', 'magic', 'matrix', 'social', 'vehicle', 'settings']
+  - var views = require('@/data/views.json');
+  each val in views
     +hidden-attr-check('show_view_'+val)
 
   include ./views/header.pug
@@ -19,4 +20,8 @@ input.is-hidden(type='checkbox' name='attr_show_minty' value='1')
   include ./views/vehicle.pug
   include ./views/settings.pug
 script(type='text/worker')
+  | const attributes = #[!= JSON.stringify(require('@/data/attributes.json')) ];
+  | const qualities = #[!= JSON.stringify(require('@/data/qualities.json')) ];
+  | const skills = #[!= JSON.stringify(require('@/data/skills.json')) ];
+  | const views = #[!= JSON.stringify(require('@/data/views.json')) ];
   include ../js/main.js

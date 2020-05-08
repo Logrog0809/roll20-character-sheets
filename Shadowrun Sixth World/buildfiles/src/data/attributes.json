@@ -1,0 +1,72 @@
+{
+  "agility": {
+    "name": "agility",
+    "display": "Agility",
+    "abbr": "AGI",
+    "type": "physical",
+    "page": 37
+  },
+  "body": {
+    "name": "body",
+    "display": "Body",
+    "abbr": "BOD",
+    "type": "physical",
+    "page": 37
+  },
+  "charisma": {
+    "name": "charisma",
+    "display": "Charisma",
+    "abbr": "CHA",
+    "type": "mental",
+    "page": 38
+  },
+  "intuition": {
+    "name": "intuition",
+    "display": "Intuition",
+    "abbr": "INT",
+    "type": "mental",
+    "page": 38
+  },
+  "logic": {
+    "name": "logic",
+    "display": "Logic",
+    "abbr": "LOG",
+    "type": "mental",
+    "page": 38
+  },
+  "magic": {
+    "name": "magic",
+    "display": "Magic",
+    "abbr": "MAG",
+    "type": "none",
+    "page": 38
+  },
+  "reaction": {
+    "name": "reaction",
+    "display": "Reaction",
+    "abbr": "REA",
+    "type": "physical",
+    "page": 38
+  },
+  "resonance": {
+    "name": "resonance",
+    "display": "Resonance",
+    "abbr": "RES",
+    "type": "none",
+    "page": 38
+  },
+  "strength": {
+    "name": "strength",
+    "display": "Strength",
+    "abbr": "STR",
+    "type": "physical",
+    "page": 38
+  },
+  "willpower": {
+    "name": "willpower",
+    "display": "Willpower",
+    "abbr": "WIL",
+    "type": "mental",
+    "page": 38
+  }
+}

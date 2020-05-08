@@ -1,0 +1,450 @@
+{
+  "ambidextrous": {
+    "book": "Core Rulebook",
+    "display": "Ambidextrous",
+    "name": "ambidextrous",
+    "page": 70,
+    "positive": true
+  },
+  "analyticalmind": {
+    "book": "Core Rulebook",
+    "display": "Analytical Mind",
+    "name": "analyticalmind",
+    "page": 70,
+    "positive": true
+  },
+  "aptitude": {
+    "book": "Core Rulebook",
+    "display": "Aptitude",
+    "name": "aptitude",
+    "page": 70,
+    "positive": true
+  },
+  "astralchameleon": {
+    "book": "Core Rulebook",
+    "display": "Astral Chameleon",
+    "name": "astralchameleon",
+    "page": 70,
+    "positive": true
+  },
+  "blandness": {
+    "book": "Core Rulebook",
+    "display": "Blandness",
+    "name": "blandness",
+    "page": 70,
+    "positive": true
+  },
+  "builttought": {
+    "book": "Core Rulebook",
+    "display": "Built Tough",
+    "name": "builttough",
+    "page": 70,
+    "positive": true
+  },
+  "catlike": {
+    "book": "Core Rulebook",
+    "display": "Catlike",
+    "name": "catlike",
+    "page": 71,
+    "positive": true
+  },
+  "dermaldeposits": {
+    "book": "Core Rulebook",
+    "display": "Dermal Deposits",
+    "name": "dermaldeposits",
+    "page": 71,
+    "positive": true
+  },
+  "doublejointed": {
+    "book": "Core Rulebook",
+    "display": "Double Jointed",
+    "name": "doublejointed",
+    "page": 71,
+    "positive": true
+  },
+  "elementalresistance": {
+    "book": "Core Rulebook",
+    "display": "Elemental Resistance",
+    "name": "elementalresistance",
+    "page": 71,
+    "positive": true
+  },
+  "exceptionalattribute": {
+    "book": "Core Rulebook",
+    "display": "Exceptional Attribute",
+    "name": "exceptionalattribute",
+    "page": 71,
+    "positive": true
+  },
+  "firstimpression": {
+    "book": "Core Rulebook",
+    "display": "First Impression",
+    "name": "firstimpression",
+    "page": 71,
+    "positive": true
+  },
+  "focusedconcentraion": {
+    "book": "Core Rulebook",
+    "display": "Focused Concentration",
+    "name": "focusedconcentration",
+    "page": 71,
+    "positive": true
+  },
+  "gearhead": {
+    "book": "Core Rulebook",
+    "display": "Gearhead",
+    "name": "gearhead",
+    "page": 71,
+    "positive": true
+  },
+  "guts": {
+    "book": "Core Rulebook",
+    "display": "Guts",
+    "name": "guts",
+    "page": 71,
+    "positive": true
+  },
+  "hardening": {
+    "book": "Core Rulebook",
+    "display": "Hardening",
+    "name": "hardening",
+    "page": 72,
+    "positive": true
+  },
+  "highpaintolerance": {
+    "book": "Core Rulebook",
+    "display": "High Pain Tolerance",
+    "name": "highpaintolerance",
+    "page": 72,
+    "positive": true
+  },
+  "homeground": {
+    "book": "Core Rulebook",
+    "display": "Home Ground",
+    "name": "homeground",
+    "page": 72,
+    "positive": true
+  },
+  "humanlooking": {
+    "book": "Core Rulebook",
+    "display": "Human-looking",
+    "name": "humanlooking",
+    "page": 72,
+    "positive": true
+  },
+  "indomitable": {
+    "book": "Core Rulebook",
+    "display": "Indomitable",
+    "name": "indomitable",
+    "page": 72,
+    "positive": true
+  },
+  "juryrigger": {
+    "book": "Core Rulebook",
+    "display": "Juryrigger",
+    "name": "juryrigger",
+    "page": 72,
+    "positive": true
+  },
+  "longreach": {
+    "book": "Core Rulebook",
+    "display": "Long Reach",
+    "name": "longreach",
+    "page": 72,
+    "positive": true
+  },
+  "lowlightvision": {
+    "book": "Core Rulebook",
+    "display": "Low-light Vision",
+    "name": "lowlightvision",
+    "page": 72,
+    "positive": true
+  },
+  "magicresistance": {
+    "book": "Core Rulebook",
+    "display": "Magic Resistance",
+    "name": "magicresistance",
+    "page": 72,
+    "positive": true
+  },
+  "mentorspirit": {
+    "book": "Core Rulebook",
+    "display": "Mentor Spirit",
+    "name": "mentorspirit",
+    "page": 73,
+    "positive": true
+  },
+  "photographicmemory": {
+    "book": "Core Rulebook",
+    "display": "Photograph Memory",
+    "name": "photographmemory",
+    "page": 73,
+    "positive": true
+  },
+  "quickhealer": {
+    "book": "Core Rulebook",
+    "display": "Quick Healer",
+    "name": "quickhealer",
+    "page": 73,
+    "positive": true
+  },
+  "resistancetopathogens": {
+    "book": "Core Rulebook",
+    "display": "Resistance To Pathogens",
+    "name": "resistancetopathogens",
+    "page": 73,
+    "positive": true
+  },
+  "spiritspriteaffinity": {
+    "book": "Core Rulebook",
+    "display": "Spirit/Sprite Affinity",
+    "name": "spiritspriteaffinity",
+    "page": 73,
+    "positive": true
+  },
+  "thermographicvision": {
+    "book": "Core Rulebook",
+    "display": "Thermographic Vision",
+    "name": "thermographicvision",
+    "page": 73,
+    "positive": true
+  },
+  "toughness": {
+    "book": "Core Rulebook",
+    "display": "Toughness",
+    "name": "toughness",
+    "page": 73,
+    "positive": true
+  },
+  "toxinresistance": {
+    "book": "Core Rulebook",
+    "display": "Toxin Resistance",
+    "name": "toxinresistance",
+    "page": 73,
+    "positive": true
+  },
+  "willtolive": {
+    "book": "Core Rulebook",
+    "display": "Will To Live",
+    "name": "willtolive",
+    "page": 74,
+    "positive": true
+  },
+  "addiction": {
+    "book": "Core Rulebook",
+    "display": "Addiction",
+    "name": "addiction",
+    "page": 74,
+    "positive": true
+  },
+  "allergy": {
+    "book": "Core Rulebook",
+    "display": "Allergy",
+    "name": "allergy",
+    "page": 74,
+    "positive": false
+  },
+  "arvertigo": {
+    "book": "Core Rulebook",
+    "display": "AR Vertigo",
+    "name": "arvertigo",
+    "page": 75,
+    "positive": false
+  },
+  "astralbeacon": {
+    "book": "Core Rulebook",
+    "display": "Astral Beacon",
+    "name": "astralbeacon",
+    "page": 75,
+    "positive": false
+  },
+  "badluck": {
+    "book": "Core Rulebook",
+    "display": "Bad Luck",
+    "name": "badluck",
+    "page": 75,
+    "positive": false
+  },
+  "badrep": {
+    "book": "Core Rulebook",
+    "display": "Bad Rep",
+    "name": "badrep",
+    "page": 75,
+    "positive": false
+  },
+  "combatparalysis": {
+    "book": "Core Rulebook",
+    "display": "Combat Paralysis",
+    "name": "combatparalysis",
+    "page": 75,
+    "positive": false
+  },
+  "dependents": {
+    "book": "Core Rulebook",
+    "display": "Dependents",
+    "name": "dependents",
+    "page": 75,
+    "positive": false
+  },
+  "distinctivestyle": {
+    "book": "Core Rulebook",
+    "display": "Distinctive Style",
+    "name": "distinctivestyle",
+    "page": 76,
+    "positive": false
+  },
+  "elfposter": {
+    "book": "Core Rulebook",
+    "display": "Elf Poser",
+    "name": "elfposer",
+    "page": 76,
+    "positive": false
+  },
+  "glassjaw": {
+    "book": "Core Rulebook",
+    "display": "Glass Jaw",
+    "name": "glassjaw",
+    "page": 76,
+    "positive": false
+  },
+  "gremlins": {
+    "book": "Core Rulebook",
+    "display": "Gremlins",
+    "name": "gremlins",
+    "page": 76,
+    "positive": false
+  },
+  "honorbound": {
+    "book": "Core Rulebook",
+    "display": "Honorbound",
+    "name": "honorbound",
+    "page": 76,
+    "positive": false
+  },
+  "impairedattribute": {
+    "book": "Core Rulebook",
+    "display": "Impaired Attribute",
+    "name": "impariedattribute",
+    "page": 76,
+    "positive": false
+  },
+  "incompotentskill": {
+    "book": "Core Rulebook",
+    "display": "Incompotent Skill",
+    "name": "incompotentskill",
+    "page": 76,
+    "positive": false
+  },
+  "indebt": {
+    "book": "Core Rulebook",
+    "display": "In Debt",
+    "name": "indebt",
+    "page": 77,
+    "positive": false
+  },
+  "insomnia": {
+    "book": "Core Rulebook",
+    "display": "Insomnia",
+    "name": "insomnia",
+    "page": 77,
+    "positive": false
+  },
+  "lossofconfidence": {
+    "book": "Core Rulebook",
+    "display": "Loss Of Confidence",
+    "name": "lossofconfidence",
+    "page": 78,
+    "positive": false
+  },
+  "lowpaintolerance": {
+    "book": "Core Rulebook",
+    "display": "Low Pain Tolerance",
+    "name": "lowpaintolerance",
+    "page": 78,
+    "positive": false
+  },
+  "orkposer": {
+    "book": "Core Rulebook",
+    "display": "Ork Poser",
+    "name": "orkposer",
+    "page": 78,
+    "positive": false
+  },
+  "prejudiced": {
+    "book": "Core Rulebook",
+    "display": "Prejudiced",
+    "name": "prejudiced",
+    "page": 78,
+    "positive": false
+  },
+  "scorched": {
+    "book": "Core Rulebook",
+    "display": "Scorched",
+    "name": "scorched",
+    "page": 78,
+    "positive": false
+  },
+  "sensitivesystem": {
+    "book": "Core Rulebook",
+    "display": "Sensitive System",
+    "name": "sensitivesystem",
+    "page": 78,
+    "positive": false
+  },
+  "simsensevertigo": {
+    "book": "Core Rulebook",
+    "display": "Simsense Vertigo",
+    "name": "simsensevertigo",
+    "page": 78,
+    "positive": false
+  },
+  "sinner": {
+    "book": "Core Rulebook",
+    "display": "Sinner",
+    "name": "sinner",
+    "page": 78,
+    "positive": false
+  },
+  "socialstress": {
+    "book": "Core Rulebook",
+    "display": "Social Stress",
+    "name": "socialstress",
+    "page": 78,
+    "positive": false
+  },
+  "spritespiritbane": {
+    "book": "Core Rulebook",
+    "display": "Sprite/Spirit Bane",
+    "name": "spritespiritbane",
+    "page": 79,
+    "positive": false
+  },
+  "uncouth": {
+    "book": "Core Rulebook",
+    "display": "Uncouth",
+    "name": "uncouth",
+    "page": 79,
+    "positive": false
+  },
+  "uneducated": {
+    "book": "Core Rulebook",
+    "display": "Uneducated",
+    "name": "uneducated",
+    "page": 79,
+    "positive": false
+  },
+  "unsteadyhands": {
+    "book": "Core Rulebook",
+    "display": "Unsteady Hands",
+    "name": "unsteadyhands",
+    "page": 79,
+    "positive": false
+  },
+  "weakimmunesystem": {
+    "book": "Core Rulebook",
+    "display": "Weak Immune System",
+    "name": "weakimmunesystem",
+    "page": 79,
+    "positive": false
+  }
+}

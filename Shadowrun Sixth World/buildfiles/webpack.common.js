@@ -4,6 +4,11 @@ module.exports = {
   entry: [
     path.resolve(__dirname, './src/styles/sr6sheet.scss'),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   module: {
     rules: [
       {

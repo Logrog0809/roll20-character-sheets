@@ -1,4 +1,4 @@
-window.addEventListener('load', (eve) => {
+window.addEventListener('load', () => {
   document.querySelectorAll('.nav-block button').forEach((srcElement) => {
     srcElement.addEventListener('click', (eve) => {
       // Hide all the forms at first

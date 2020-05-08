@@ -18,7 +18,7 @@ module.exports = merge(common, {
           {
             loader: 'sass-loader',
             options: {
-              prependData: "$sheet-namespace: 'sheet-';",
+              prependData: '$sheet-namespace: \'sheet-\';',
             },
           },
         ],
