@@ -14,7 +14,7 @@
           fieldset(class='repeating_qualities')
             .row.is-vcentered
               .col-6
-                select.input(name='attr_quality')
+                select.input(name='attr_qualityname')
                   option(value='')
                   option Other
                   optgroup(label='Positive')
@@ -24,4 +24,4 @@
                     each qual in negative
                       option(value=qual.name)= qual.display
               .col-6
-                input.input(name='attr_notes' type='text')
+                input.input(name='attr_qualitynotes' type='text')

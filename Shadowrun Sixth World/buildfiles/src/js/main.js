@@ -60,7 +60,6 @@ function updateBonusAttr(attr) {
     const updateObj = {};
     updateObj[totalName] = sum;
     setAttrs(updateObj);
-    log(updateObj);
   });
 }
 
@@ -68,7 +67,6 @@ function updateView(view) {
   const viewAttrs = {};
   views.forEach((val) => viewAttrs[`show_view_${val}`] = 0);
   viewAttrs[`show_view_${view}`] = 1;
-  log(viewAttrs);
   setAttrs(viewAttrs);
 }
 

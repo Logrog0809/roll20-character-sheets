@@ -18,22 +18,22 @@
           fieldset(class='repeating_rangedweapons')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_name')
+                input.input(name='attr_rwname')
               .col-1
-                input.input(name='attr_dv')
+                input.input(name='attr_rwdv')
               .col-2
-                input.input(name='attr_firingmodes')
+                input.input(name='attr_rwfiringmodes')
               .col-2
-                input.input(name='attr_attackratings')
+                input.input(name='attr_rwattackratings')
               .col-1
-                input.input(name='attr_ammo')
+                input.input(name='attr_rwammo')
               .col-2
-                select.input(name='attr_skill')
+                select.input(name='attr_rwskill')
                   option(value='') None
                   each skill in weaponskills
                     option(value=skill.name data-i18n=skill.name+'-u')= skill.display
               .col-1
                 .checkbox
                   label
-                    input(name='attr_carried' type='checkbox' value='1')
+                    input(name='attr_rwcarried' type='checkbox' value='1')
                     span

@@ -14,24 +14,24 @@
           fieldset(class='repeating_skills')
             .row.is-vcentered
               .col-4
-                select.input(name='attr_name')
+                select.input(name='attr_skillname')
                   each skill in skills
                     option(value=skill.name data-i18n=skill.name+'-u')= skill.display
               .col-3
-                input.input(name='attr_rank' type='number' min='0' value='0')
+                input.input(name='attr_skillrank' type='number' min='0' value='0')
               .col-1
                 .checkbox
                   label
-                    input(name='attr_hasspec' type='checkbox' value='1')
+                    input(name='attr_skillhasspec' type='checkbox' value='1')
                     span
               .col-4
-                input.input(name='attr_notes' type='text')
-              input.is-hidden(type='checkbox' name='attr_hasspec' value='1' readonly)
+                input.input(name='attr_skillnotes' type='text')
+              input.is-hidden(type='checkbox' name='attr_skillhasspec' value='1' readonly)
               .col-6.light-bg
                 label.is-flex.is-vcentered
                   span.is-half(data-i18n='specialization-u') Specialization
                   span.is-half
-                    select.input(name='attr_specialization')
+                    select.input(name='attr_skillspecialization')
                       option(value='') None
                       option(value='other') Other
                       each skill in skills
@@ -42,7 +42,7 @@
                 label.is-flex.is-vcentered
                   span.is-half(data-i18n='expertise-u') Expertise
                   span.is-half
-                    select.input(name='attr_expertise')
+                    select.input(name='attr_skillexpertise')
                       option(value='') None
                       option(value='other') Other
                       each skill in skills

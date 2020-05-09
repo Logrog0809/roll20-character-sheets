@@ -16,18 +16,18 @@
           fieldset(class='repeating_meleeweapons')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_name')
+                input.input(name='attr_mwname')
               .col-1
-                input.input(name='attr_dv')
+                input.input(name='attr_mwdv')
               .col-2
-                input.input(name='attr_attackratings')
+                input.input(name='attr_mwattackratings')
               .col-2
-                select.input(name='attr_skill')
+                select.input(name='attr_mwskill')
                   option(value='') None
                   each skill in weaponskills
                     option(value=skill.name data-i18n=skill.name+'-u')= skill.display
               .col-1
                 .checkbox
                   label
-                    input(name='attr_carried' type='checkbox' value='1')
+                    input(name='attr_mwcarried' type='checkbox' value='1')
                     span
