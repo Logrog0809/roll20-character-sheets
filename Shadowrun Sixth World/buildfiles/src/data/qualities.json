@@ -235,7 +235,7 @@
     "display": "Addiction",
     "name": "addiction",
     "page": 74,
-    "positive": true
+    "positive": false
   },
   "allergy": {
     "book": "Core Rulebook",

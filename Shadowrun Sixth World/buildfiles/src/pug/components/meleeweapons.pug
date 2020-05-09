@@ -1,10 +1,33 @@
-- var base='melee-weapon'
-
-.component(class='melee-weapons')
-  h3(data-i18n='melee-weapons-u') Melee Weapons
-  ul(class=base+'-header')
-    +repeating-li(base, 'Weapon', 'name', 'weapon')
-    +repeating-li(base, 'DV', 'dv')
-    +repeating-li(base, 'Close', 'close')
-  fieldset(class='repeating_'+base)
-    +add-repeating-inputs(base, ['weapon', 'dv', 'close'])
+- var skills = require('@/data/skills.json')
+- var weaponskills = Object.values(skills).filter(x => x.weapons);
+.melee-weapons
+  .card
+    .card-header
+      h3(data-i18n='melee-weapons-u') Melee Weapons
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-3(data-i18n='weapon-u') Weapon
+          .col-1(data-i18n='dv-u') DV
+          .col-2(data-i18n='attack-ratings-u') Attack Ratings
+          .col-2(data-i18n='Skill') Skill
+          .col-1(data-i18n='carried-u') Carried?
+        .is-flex
+          fieldset(class='repeating_meleeweapons')
+            .row.is-vcentered
+              .col-3
+                input.input(name='attr_name')
+              .col-1
+                input.input(name='attr_dv')
+              .col-2
+                input.input(name='attr_attackratings')
+              .col-2
+                select.input(name='attr_skill')
+                  option(value='') None
+                  each skill in weaponskills
+                    option(value=skill.name data-i18n=skill.name+'-u')= skill.display
+              .col-1
+                .checkbox
+                  label
+                    input(name='attr_carried' type='checkbox' value='1')
+                    span
