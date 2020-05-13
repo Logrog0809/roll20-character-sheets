@@ -1,3 +1,4 @@
+include ../mixins.pug
 - var skills = require('@/data/skills.json')
 - var weaponskills = Object.values(skills).filter(x => x.weapons);
 .ranged-weapons
@@ -7,26 +8,40 @@
     .card-body
       .flex-table
         .flex-table-header
-          .col-3(data-i18n='weapon-u') Weapon
-          .col-1(data-i18n='dv-u') DV
-          .col-2(data-i18n='firing-modes-u') Firing Modes
-          .col-2(data-i18n='attack-ratings-u') Attack Ratings
-          .col-1(data-i18n='ammo-u') Ammo
-          .col-2(data-i18n='Skill') Skill
-          .col-1(data-i18n='carried-u') Carried?
+          .col-3
+            span(data-i18n=i18nize('Weapon')) Weapon
+          .col-1
+            +popover('DV', 'Damage Value')
+          .col-3(data-i18n=i18nize('attackratings')) Attack Ratings
+          .col-1(data-i18n=i18nize('skill')) Skill
+          .col-1(data-i18n=i18nize('carried')) Carried
+          .col-1(data-i18n='edit-u') Edit
         .is-flex
           fieldset(class='repeating_rangedweapons')
+            input.is-hidden(type='checkbox' readonly name='attr_rwisedit')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_rwname')
+                span(name='attr_rwname') Name
               .col-1
-                input.input(name='attr_rwdv')
-              .col-2
-                input.input(name='attr_rwfiringmodes')
-              .col-2
-                input.input(name='attr_rwattackratings')
+                span(name='attr_rwdv') DV
+              .col-3
+                span(name='attr_rwattackratings') ARs
               .col-1
-                input.input(name='attr_rwammo')
+                .checkbox
+                  label
+                    input(name='attr_rwisedit' type='checkbox' value='1')
+                    span
+            .row.is-vcentered.light-bg
+              .col-3
+                input.input(name='attr_rwname' type='text')
+              .col-1
+                input.input(name='attr_rwdv' type='text')
+              .col-2
+                input.input(name='attr_rwfiringmodes' type='text')
+              .col-2
+                input.input(name='attr_rwattackratings' type='text')
+              .col-1
+                input.input(name='attr_rwammo' type='text')
               .col-2
                 select.input(name='attr_rwskill')
                   option(value='') None
