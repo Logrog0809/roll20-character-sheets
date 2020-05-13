@@ -1,0 +1,30 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+.#{$sheet-namespace}sr6cs {
+  .#{$sheet-namespace}popover {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+
+    &::before {
+      background: black;
+      border-radius: 5px;
+      content: attr(title);
+      padding: 0.5em;
+      position: absolute;
+      transform: translateX(-30%) translateY(30%);
+      top: -2.5em;
+      white-space: nowrap;
+      transition: all 0.5s;
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::before {
+        visibility: visible;
+        transform: translateX(-30%) translateY(0%);
+      }
+    }
+  }
+}
