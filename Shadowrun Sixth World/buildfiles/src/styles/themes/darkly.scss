@@ -155,12 +155,12 @@ input[name='attr_show_darkly']:checked ~ .#{$sheet-namespace}darkly-theme {
       border-bottom: 1px solid $card-background-color;
     }
 
+    .#{$sheet-namespace}light-bg {
+      background-color: $row-light-background;
+    }
+
     .#{$sheet-namespace}row {
       border-bottom: 1px solid $card-background-color;
-
-      .#{$sheet-namespace}light-bg {
-        background-color: $row-light-background;
-      }
     }
   }
 }

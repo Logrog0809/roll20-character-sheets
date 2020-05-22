@@ -1,22 +1,23 @@
+include ../mixins.pug
 - var skills = require('@/data/skills.json')
 .skills
   .card
     .card-header
-      h3(data-i18n='skills-u') Skills
+      h3(data-i18n=i18nize('skills')) Skills
     .card-body
       .flex-table
         .flex-table-header
-          .col-4(data-i18n='skill-u') Skill
-          .col-3(data-i18n='rank-u') Rank
-          .col-1(data-i18n='specialization-a') Spec?
-          .col-4(data-i18n='notes-u') Notes
+          .col-4(data-i18n=i18nize('skill')) Skill
+          .col-3(data-i18n=i18nize('rank')) Rank
+          .col-1(data-i18n=i18nize('specialization')) Spec?
+          .col-4(data-i18n=i18nize('notes')) Notes
         .is-flex
           fieldset(class='repeating_skills')
             .row.is-vcentered
               .col-4
                 select.input(name='attr_skillname')
                   each skill in skills
-                    option(value=skill.name data-i18n=skill.name+'-u')= skill.display
+                    option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
               .col-3
                 input.input(name='attr_skillrank' type='number' min='0' value='0')
               .col-1
@@ -29,23 +30,23 @@
               input.is-hidden(type='checkbox' name='attr_skillhasspec' value='1' readonly)
               .col-6.light-bg
                 label.is-flex.is-vcentered
-                  span.is-half(data-i18n='specialization-u') Specialization
+                  span.is-half(data-i18n=i18nize('specialization')) Specialization
                   span.is-half
                     select.input(name='attr_skillspecialization')
                       option(value='') None
                       option(value='other') Other
                       each skill in skills
-                        optgroup(label=skill.display data-i18n-label=skill.name+'-u')
+                        optgroup(label=skill.display data-i18n-label=i18nize(skill.name))
                           each spec in skill.specializations
-                            option(data-i18n=spec.toLowerCase().replace(/\s/g, '')+'-u' value=spec)= spec
+                            option(data-i18n=i18nize(spec) value=spec)= spec
               .col-6.light-bg
                 label.is-flex.is-vcentered
-                  span.is-half(data-i18n='expertise-u') Expertise
+                  span.is-half(data-i18n=i18nize('expertise')) Expertise
                   span.is-half
                     select.input(name='attr_skillexpertise')
                       option(value='') None
                       option(value='other') Other
                       each skill in skills
-                        optgroup(label=skill.display data-i18n-label=skill.name+'-u')
+                        optgroup(label=skill.display data-i18n-label=i18nize(skill.name))
                           each spec in skill.specializations
-                            option(data-i18n=spec.toLowerCase().replace(/\s/g, '')+'-u' value=spec)= spec
+                            option(data-i18n=i18nize(spec) value=spec)= spec

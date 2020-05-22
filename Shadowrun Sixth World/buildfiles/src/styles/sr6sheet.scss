@@ -13,4 +13,6 @@
 @use './views/header' with ($sheet-namespace: $sheet-namespace);
 @use './views/character' with ($sheet-namespace: $sheet-namespace);
 
+@use './components/rangedweapons' with ($sheet-namespace: $sheet-namespace);
+
 @import url("'https://fonts.googleapis.com/css?family=Baloo+2|Ovo|Zilla+Slab&display=swap'");

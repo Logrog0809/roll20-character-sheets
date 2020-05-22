@@ -11,7 +11,7 @@ To work on the project, ensure you have [NodeJS](https://nodejs.org/) installed,
   1. Name all editable fields **attr_[fieldname]**
   2. Name all auto fields **attr_auto_[fieldname]**
   3. Use mixins and small components as much as possible
-  4. End all data-i18n's with a -u, unless they're an abbreviation, then -a
+  4. When setting i18n data, use the i18nize function
 
 ## Legal Stuff
 

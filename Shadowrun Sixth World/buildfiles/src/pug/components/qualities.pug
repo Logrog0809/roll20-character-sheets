@@ -1,15 +1,16 @@
+include ../mixins.pug
 - var qualities = Object.values(require('@/data/qualities.json'));
 - var positive = qualities.filter(x => x.positive);
 - var negative = qualities.filter(x => !x.positive);
 .qualities
   .card
     .card-header
-      h3(data-i18n='qualities-u') Qualities
+      h3(data-i18n=i18nize('qualities')) Qualities
     .card-body
       .flex-table
         .flex-table-header
-          .col-6(data-i18n='quality-u') Quality
-          .col-6(data-i18n='notes-u') Notes
+          .col-6(data-i18n=i18nize('quality')) Quality
+          .col-6(data-i18n=i18nize('notes')) Notes
         .is-flex
           fieldset(class='repeating_qualities')
             .row.is-vcentered

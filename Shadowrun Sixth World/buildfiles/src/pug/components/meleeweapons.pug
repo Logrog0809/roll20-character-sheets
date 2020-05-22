@@ -1,17 +1,18 @@
+include ../mixins.pug
 - var skills = require('@/data/skills.json')
 - var weaponskills = Object.values(skills).filter(x => x.weapons);
 .melee-weapons
   .card
     .card-header
-      h3(data-i18n='melee-weapons-u') Melee Weapons
+      h3(data-i18n=i18nize('melee weapons')) Melee Weapons
     .card-body
       .flex-table
         .flex-table-header
-          .col-3(data-i18n='weapon-u') Weapon
-          .col-1(data-i18n='dv-u') DV
-          .col-2(data-i18n='attack-ratings-u') Attack Ratings
-          .col-2(data-i18n='Skill') Skill
-          .col-1(data-i18n='carried-u') Carried?
+          .col-3(data-i18n=i18nize('weapon')) Weapon
+          .col-1(data-i18n=i18nize('dv')) DV
+          .col-2(data-i18n=i18nize('attack ratings')) Attack Ratings
+          .col-2(data-i18n=i18nize('Skill')) Skill
+          .col-1(data-i18n=i18nize('carried')) Carried?
         .is-flex
           fieldset(class='repeating_meleeweapons')
             .row.is-vcentered
@@ -25,7 +26,7 @@
                 select.input(name='attr_mwskill')
                   option(value='') None
                   each skill in weaponskills
-                    option(value=skill.name data-i18n=skill.name+'-u')= skill.display
+                    option(value=skill.name data-i18n=i18nize(skill.display))= skill.display
               .col-1
                 .checkbox
                   label

@@ -1,7 +1,9 @@
+include ../mixins.pug
+
 mixin attr-block(title, attrname)
   .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
     label.is-flex.col-6.is-vcentered
-      span.is-half(data-i18n=attrname+'-u')= title
+      span.is-half(data-i18n=i18nize(title))= title
       span.is-half
         input.input(name='attr_'+attrname type='number' min='0' value='0')
     .col-1.text-center
@@ -16,7 +18,7 @@ mixin attr-block(title, attrname)
 mixin attr-block-only-bonus(title, attrname)
   .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
     label.is-flex.col-6.is-vcentered
-      span.is-half(data-i18n=attrname+'-u')= title
+      span.is-half(data-i18n=i18nize(title))= title
       span.is-half
         input.input(name='attr_auto_'+attrname type='number' value='0' readonly tabindex='-1')
     .col-1.text-center
@@ -31,7 +33,7 @@ mixin attr-block-only-bonus(title, attrname)
 mixin attr-block-no-bonus(title, attrname)
   .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
     label.is-flex.col-6.is-vcentered
-      span.is-half(data-i18n=attrname+'-u')= title
+      span.is-half(data-i18n=i18nize(title))= title
       span.is-half
         input.input(name='attr_'+attrname type='number' min='0' value='0')&attributes(attributes)
     .col-1
@@ -43,7 +45,7 @@ mixin attr-block-no-bonus(title, attrname)
 .attributes
   .card
     .card-header
-      h3(data-i18n='attributes-u') Attributes
+      h3(data-i18n=i18nize('attributes')) Attributes
     .card-body
       .is-flex.is-paddingless
         .col-6 Attribute

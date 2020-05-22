@@ -10,7 +10,7 @@ $sheet-namespace: '' !default;
     &::before {
       background: black;
       border-radius: 5px;
-      content: attr(title);
+      content: attr(aria-label);
       padding: 0.5em;
       position: absolute;
       transform: translateX(-30%) translateY(30%);

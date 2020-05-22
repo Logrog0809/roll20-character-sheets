@@ -1,12 +1,14 @@
+include ../mixins.pug
+
 mixin navbutton(view, title)
-  button(type='action' data-view=view class='nav-control-'+view name='act_showview_'+view data-i18n=title+'-u')= title
+  button(type='action' data-view=view class='nav-control-'+view name='act_showview_'+view data-i18n=i18nize(title))= title
 
 .view.sr6cs-header
   .header-block
-    h1(data-i18n='shadowrun-6e-charsheet-u') Shadowrun 6e Character Sheet
+    h1(data-i18n=i18nize('Shadowrun 6e Character Sheet')) Shadowrun 6e Character Sheet
     .character-name
       label.is-flex.is-vcentered
-        span(data-i18n='charactername-u') Character
+        span(data-i18n=i18nize('character')) Character
         input(name='attr_character_name' type='text' readonly tabindex='-1')
   .nav-block
     +navbutton('overview', 'Overview')

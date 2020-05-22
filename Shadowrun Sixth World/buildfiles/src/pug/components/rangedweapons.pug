@@ -4,51 +4,86 @@ include ../mixins.pug
 .ranged-weapons
   .card
     .card-header
-      h3(data-i18n='ranged-weapons-u') Ranged Weapons
+      h3(data-i18n=i18nize('ranged weapons')) Ranged Weapons
     .card-body
       .flex-table
         .flex-table-header
           .col-3
-            span(data-i18n=i18nize('Weapon')) Weapon
+            span(data-i18n=i18nize('weapon')) Weapon
           .col-1
             +popover('DV', 'Damage Value')
           .col-3(data-i18n=i18nize('attackratings')) Attack Ratings
-          .col-1(data-i18n=i18nize('skill')) Skill
-          .col-1(data-i18n=i18nize('carried')) Carried
-          .col-1(data-i18n='edit-u') Edit
-        .is-flex
-          fieldset(class='repeating_rangedweapons')
-            input.is-hidden(type='checkbox' readonly name='attr_rwisedit')
-            .row.is-vcentered
-              .col-3
-                span(name='attr_rwname') Name
-              .col-1
-                span(name='attr_rwdv') DV
-              .col-3
-                span(name='attr_rwattackratings') ARs
-              .col-1
-                .checkbox
-                  label
-                    input(name='attr_rwisedit' type='checkbox' value='1')
-                    span
-            .row.is-vcentered.light-bg
-              .col-3
-                input.input(name='attr_rwname' type='text')
-              .col-1
-                input.input(name='attr_rwdv' type='text')
-              .col-2
-                input.input(name='attr_rwfiringmodes' type='text')
-              .col-2
-                input.input(name='attr_rwattackratings' type='text')
-              .col-1
-                input.input(name='attr_rwammo' type='text')
-              .col-2
-                select.input(name='attr_rwskill')
-                  option(value='') None
-                  each skill in weaponskills
-                    option(value=skill.name data-i18n=skill.name+'-u')= skill.display
-              .col-1
-                .checkbox
-                  label
-                    input(name='attr_rwcarried' type='checkbox' value='1')
-                    span
+          .col-2(data-i18n=i18nize('carried')) Carried
+          .col-1(data-i18n=i18nize('wifi')) WiFi
+          .col-1(data-i18n=i18nize('edit')) Edit
+        fieldset(class='repeating_rangedweapons')
+          input.is-hidden(type='checkbox' readonly name='attr_rwisedit' value='1')
+          .row.is-vcentered
+            .col-3
+              span(name='attr_rwname') Name
+            .col-1
+              span(name='attr_rwdv') DV
+            .col-3
+              span(name='attr_rwarclose') Close
+              | /
+              span(name='attr_rwarnear') Near
+              | /
+              span(name='attr_rwarmedium') Medium
+              | /
+              span(name='attr_rwarfar') Far
+              | /
+              span(name='attr_rwarextreme') Extreme
+            .col-2
+              .checkbox
+                label
+                  input(name='attr_rwiscarried' type='checkbox' value='1')
+                  span
+            .col-1
+              .checkbox
+                label
+                  input(name='attr_rwiswifi' type='checkbox' value='1')
+                  span
+            .col-1
+              .checkbox
+                label
+                  input(name='attr_rwisedit' type='checkbox' value='1')
+                  span
+          .row.is-vcentered.light-bg.edit-form
+            .col-12
+              h3 Editing: #[span(name='attr_rwname')]
+            .col-2 Weapon Info
+            .col-3
+              span Name
+              input.input(name='attr_rwname' type='text')
+            .col-2
+              +popover('DV', 'Damage Value')
+              input.input(name='attr_rwdv' type='text')
+            .col-2
+              span Firing Modes
+              input.input(name='attr_rwfiringmodes' type='text')
+            .col-1
+              span Ammo
+              input.input(name='attr_rwammo' type='text')
+            .col-2
+              span Skill
+              select.input(name='attr_rwskill')
+                option(value='') None
+                each skill in weaponskills
+                  option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
+          .row.is-vcentered.light-bg.edit-form
+            .col-2 Attack Ratings
+            .col-2
+              span Close
+              input.input(name='attr_rwarclose' type='number' value='0')
+            .col-2
+              span Near
+              input.input(name='attr_rwarnear' type='number' value='0')
+            .col-2
+              span Medium
+              input.input(name='attr_rwarmedium' type='number' value='0')
+            .col-2
+              span Far
+              input.input(name='attr_rwarfar' type='number' value='0')
+            .col-2
+              span Extreme
+              input.input(name='attr_rwarextreme' type='number' value='0')

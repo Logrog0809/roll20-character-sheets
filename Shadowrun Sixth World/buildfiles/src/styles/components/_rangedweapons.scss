@@ -1,0 +1,15 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  .#{$sheet-namespace}ranged-weapons {
+    .#{$sheet-namespace}edit-form {
+      display: none;
+    }
+
+    input[name=attr_rwisedit]:checked ~ .#{$sheet-namespace}edit-form {
+      display: flex;
+    }
+  }
+}
