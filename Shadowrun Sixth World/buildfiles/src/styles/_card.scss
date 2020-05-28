@@ -5,6 +5,7 @@ $sheet-namespace: '' !default;
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.75rem;
   position: relative;
 
   .#{$sheet-namespace}card-header {

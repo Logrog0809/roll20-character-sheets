@@ -1,0 +1,26 @@
+include ../mixins.pug
+.lifestyles
+  .card
+    .card-header
+      h3(data-i18n=i18nize('lifestyles')) Lifestyles
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-6(data-i18n=i18nize('name')) Name
+          .col-3(data-i18n=i18nize('Rate')) Rate
+          .col-3(data-i18n=i18nize('primary')) Primary
+        fieldset(class='repeating_lifestyles')
+          .row.is-vcentered
+            .col-6
+              input.input(name='attr_lname' type='text')
+            .col-3
+              input.input(name='attr_lrate' type='number' value='0')
+            .col-3
+              .checkbox
+                label
+                  input(name='attr_lprimary' type='checkbox' value='1')
+                  span
+          .row.is-vcentered
+            .col-12
+              span(data-i18n=i18nize('Notes')) Notes
+              textarea.textarea(name='attr_lnotes')

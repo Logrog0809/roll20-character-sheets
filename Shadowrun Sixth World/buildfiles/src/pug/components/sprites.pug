@@ -1,0 +1,32 @@
+include ../mixins.pug
+- var sprites = require('@/data/sprites.json')
+.sprites
+  .card
+    .card-header
+      h3(data-i18n=i18nize('sprites')) Sprites
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-3(data-i18n=i18nize('name')) Name
+          .col-2(data-i18n=i18nize('type')) Type
+          .col-2(data-i18n=i18nize('Rating')) Rating
+          .col-2(data-i18n=i18nize('Tasks')) Tasks
+          .col-2(data-i18n=i18nize('Registered')) Registered
+        .is-flex
+          fieldset(class='repeating_sprites')
+            .row.is-vcentered
+              .col-3
+                input.input(name='attr_spritename' type='text')
+              .col-2
+                select.input(name='attr_spritetype')
+                  each sprite in sprites
+                    option(data-i18n=i18nize(sprite.name) value=sprite.name)= sprite.display
+              .col-2
+                input.input(name='attr_spriterating' type='number' value='0')
+              .col-2
+                input.input(name='attr_spritetasks' type='number' value='0')
+              .col-1
+                .checkbox
+                  label
+                    input(name='attr_spriteregistered' type='checkbox' value='1')
+                    span

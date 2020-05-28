@@ -15,6 +15,74 @@ const sheetUpdateCallbacks = {
   }
 };
 
+const spriteStats = {
+  courier: {
+    attack: (l) => { return l; },
+    sleaze: (l) => { return l + 3; },
+    data: (l) => { return l + 1; },
+    firewall: (l) => { return l + 2; },
+    initiative: (l) => {
+      return {
+        bonus: (l*2)+1,
+        dice: 4
+      };
+    },
+    resonance: (l) => { return l; },
+  },
+  crack: {
+    attack: (l) => { return l; },
+    sleaze: (l) => { return l + 3; },
+    data: (l) => { return l + 2; },
+    firewall: (l) => { return l + 1; },
+    initiative: (l) => {
+      return {
+        bonus: (l*2)+2,
+        dice: 4
+      };
+    },
+    resonance: (l) => { return l; },
+  },
+  data: {
+    attack: (l) => { return l - 1; },
+    sleaze: (l) => { return l; },
+    data: (l) => { return l + 4; },
+    firewall: (l) => { return l + 1; },
+    initiative: (l) => {
+      return {
+        bonus: (l*2)+4,
+        dice: 4
+      };
+    },
+    resonance: (l) => { return l; },
+  },
+  fault: {
+    attack: (l) => { return l + 3; },
+    sleaze: (l) => { return l; },
+    data: (l) => { return l + 1; },
+    firewall: (l) => { return l + 2; },
+    initiative: (l) => {
+      return {
+        bonus: (l*2)+1,
+        dice: 4
+      };
+    },
+    resonance: (l) => { return l; },
+  },
+  machine: {
+    attack: (l) => { return l + 1; },
+    sleaze: (l) => { return l; },
+    data: (l) => { return l + 3; },
+    firewall: (l) => { return l + 2; },
+    initiative: (l) => {
+      return {
+        bonus: (l*2)+3,
+        dice: 4
+      };
+    },
+    resonance: (l) => { return l; },
+  },
+};
+
 function log(output) {
   console.log('[SR6CS]: ', output);
 }

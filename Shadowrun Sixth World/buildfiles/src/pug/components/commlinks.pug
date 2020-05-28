@@ -1,0 +1,32 @@
+include ../mixins.pug
+.commlinks
+  .card
+    .card-header
+      h3(data-i18n=i18nize('commlinks')) Commlinks
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-3(data-i18n=i18nize('name')) Name
+          .col-2(data-i18n=i18nize('Rating')) Rating
+          .col-2(data-i18n=i18nize('data proc')) Data Proc.
+          .col-2(data-i18n=i18nize('Firewall')) Firewall
+          .col-2(data-i18n=i18nize('program slots')) Program Slots
+          .col-1(data-i18n=i18nize('carried')) Carried?
+        .is-flex
+          fieldset(class='repeating_commlinks')
+            .row.is-vcentered
+              .col-3
+                input.input(name='attr_iname' type='text')
+              .col-2
+                input.input(name='attr_irating' type='number' value='0')
+              .col-2
+                input.input(name='attr_idataproc' type='number' value='0')
+              .col-2
+                input.input(name='attr_ifirewall' type='number' value='0')
+              .col-2
+                input.input(name='attr_islots' type='number' value='0')
+              .col-1
+                .checkbox
+                  label
+                    input(name='attr_icarried' type='checkbox' checked value='1')
+                    span

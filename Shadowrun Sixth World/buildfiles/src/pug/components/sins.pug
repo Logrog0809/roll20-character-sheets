@@ -1,0 +1,28 @@
+include ../mixins.pug
+.sins
+  .card
+    .card-header
+      h3(data-i18n=i18nize('sins')) SINs
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-6(data-i18n=i18nize('name')) Name
+          .col-3(data-i18n=i18nize('Rating')) Rating
+          .col-3(data-i18n=i18nize('Type')) Type
+        fieldset(class='repeating_lifestyles')
+          .row.is-vcentered
+            .col-6
+              input.input(name='attr_sinname' type='text')
+            .col-3
+              input.input(name='attr_sinrating' type='number' value='0')
+            .col-3
+              select.input(name='attr_sintype' value='0')
+                option(value='0') Fake
+                option(value='1') Criminal
+                option(value='2') Legitimate
+                option(value='3') Other
+            
+          .row.is-vcentered
+            .col-12
+              span(data-i18n=i18nize('Description')) Description
+              textarea.textarea(name='attr_sindescription')

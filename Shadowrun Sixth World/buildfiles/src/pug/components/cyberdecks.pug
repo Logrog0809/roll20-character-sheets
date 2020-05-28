@@ -1,0 +1,32 @@
+include ../mixins.pug
+.cyberdecks
+  .card
+    .card-header
+      h3(data-i18n=i18nize('cyberdecks')) Cyberdecks
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-3(data-i18n=i18nize('name')) Name
+          .col-2(data-i18n=i18nize('Rating')) Rating
+          .col-2(data-i18n=i18nize('attack')) Attack
+          .col-2(data-i18n=i18nize('sleaze')) Sleaze
+          .col-2(data-i18n=i18nize('program slots')) Program Slots
+          .col-1(data-i18n=i18nize('carried')) Carried?
+        .is-flex
+          fieldset(class='repeating_cyberdecks')
+            .row.is-vcentered
+              .col-3
+                input.input(name='attr_cyname' type='text')
+              .col-2
+                input.input(name='attr_cyrating' type='number' value='0')
+              .col-2
+                input.input(name='attr_cyattack' type='number' value='0')
+              .col-2
+                input.input(name='attr_cysleaze' type='number' value='0')
+              .col-2
+                input.input(name='attr_cyslots' type='number' value='0')
+              .col-1
+                .checkbox
+                  label
+                    input(name='attr_cycarried' type='checkbox' checked value='1')
+                    span

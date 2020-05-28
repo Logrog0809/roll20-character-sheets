@@ -2,7 +2,7 @@ include ../mixins.pug
 .armor
   .card
     .card-header
-      h3(data-i18n=i18nize('armor')) Armor
+      h3(data-i18n=i18nize('items')) Items
     .card-body
       .flex-table
         .flex-table-header
@@ -11,16 +11,16 @@ include ../mixins.pug
           .col-4(data-i18n=i18nize('Notes')) Notes
           .col-1(data-i18n=i18nize('carried')) Carried?
         .is-flex
-          fieldset(class='repeating_armor')
+          fieldset(class='repeating_items')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_arname' type='text')
+                input.input(name='attr_iname' type='text')
               .col-2
-                input.input(name='attr_arrating' type='text')
+                input.input(name='attr_irating' type='text')
               .col-4
-                input.input(name='attr_arnotes' type='text')
+                input.input(name='attr_inotes' type='text')
               .col-1
                 .checkbox
                   label
-                    input(name='attr_arcarried' type='checkbox' value='1')
+                    input(name='attr_icarried' type='checkbox' checked value='1')
                     span

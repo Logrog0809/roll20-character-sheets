@@ -8,8 +8,11 @@ include ../mixins.pug
       .flex-table
         .flex-table-header
           .col-4(data-i18n=i18nize('skill')) Skill
-          .col-3(data-i18n=i18nize('rank')) Rank
-          .col-1(data-i18n=i18nize('specialization')) Spec?
+          .col-2(data-i18n=i18nize('rank')) Rank
+          .col-1
+            +popover('Spec?', 'Specialization?')
+          .col-1
+            +popover('Exp?', 'Specialization?')
           .col-4(data-i18n=i18nize('notes')) Notes
         .is-flex
           fieldset(class='repeating_skills')
@@ -18,7 +21,7 @@ include ../mixins.pug
                 select.input(name='attr_skillname')
                   each skill in skills
                     option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
-              .col-3
+              .col-2
                 input.input(name='attr_skillrank' type='number' min='0' value='0')
               .col-1
                 .checkbox

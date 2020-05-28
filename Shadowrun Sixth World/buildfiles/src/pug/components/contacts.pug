@@ -1,0 +1,23 @@
+include ../mixins.pug
+.contacts
+  .card
+    .card-header
+      h3(data-i18n=i18nize('contacts')) Contacts
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-6(data-i18n=i18nize('name')) Name
+          .col-3(data-i18n=i18nize('connection')) Connection
+          .col-3(data-i18n=i18nize('loyalty')) Loyalty
+        fieldset(class='repeating_contacts')
+          .row.is-vcentered
+            .col-6
+              input.input(name='attr_cname' type='text')
+            .col-3
+              input.input(name='attr_cconnection' type='number' value='0')
+            .col-3
+              input.input(name='attr_cloyalty' type='number' value='0')
+          .row.is-vcentered
+            .col-12
+              span Notes
+              textarea.textarea(name='attr_cnotes')

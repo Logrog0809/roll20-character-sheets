@@ -1,0 +1,11 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  .#{$sheet-namespace}view-social {
+    .#{$sheet-namespace}sins {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

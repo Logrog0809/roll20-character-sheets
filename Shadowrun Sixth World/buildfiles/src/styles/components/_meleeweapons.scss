@@ -1,0 +1,15 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  .#{$sheet-namespace}melee-weapons {
+    .#{$sheet-namespace}edit-form {
+      display: none;
+    }
+
+    input[name=attr_mwisedit]:checked ~ .#{$sheet-namespace}edit-form {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "courier": {
+    "display": "Courier",
+    "name": "courier",
+    "powers": [
+      "Cookie",
+      "Hash"
+    ],
+    "skills": [
+      "Cracking",
+      "Electronics"
+    ]
+  },
+  "crack": {
+    "display": "Crack",
+    "name": "crack",
+    "powers": [
+      "Phantom",
+      "Suppression"
+    ],
+    "skills": [
+      "Cracking",
+      "Electronics"
+    ]
+  },
+  "data": {
+    "display": "Data",
+    "name": "data",
+    "powers": [
+      "Camouflage",
+      "Watermark"
+    ],
+    "skills": [
+      "Cracking",
+      "Electronics"
+    ]
+  },
+  "fault": {
+    "display": "Fault",
+    "name": "fault",
+    "powers": [
+      "Electron Storm",
+      "Trap"
+    ],
+    "skills": [
+      "Cracking",
+      "Electronics"
+    ]
+  },
+  "machine": {
+    "display": "Machine",
+    "name": "machine",
+    "powers": [
+      "Diagnostics",
+      "Override",
+      "Stability"
+    ],
+    "skills": [
+      "Electronics",
+      "Engineering"
+    ]
+  }
+}

@@ -23,5 +23,6 @@ script(type='text/worker')
   | const attributes = #[!= JSON.stringify(require('@/data/attributes.json')) ];
   | const qualities = #[!= JSON.stringify(require('@/data/qualities.json')) ];
   | const skills = #[!= JSON.stringify(require('@/data/skills.json')) ];
+  | const sprites = #[!= JSON.stringify(require('@/data/sprites.json')) ];
   | const views = #[!= JSON.stringify(require('@/data/views.json')) ];
   include ../js/main.js
