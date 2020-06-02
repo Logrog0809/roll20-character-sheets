@@ -1,0 +1,32 @@
+{
+  "armor": {
+    "carried": "armor-carried",
+    "name": "armor-name",
+    "notes": "armor-notes",
+    "rating": "armor-rating"
+  },
+  "attributes": {
+    "agility": "agility",
+    "body": "body",
+    "charisma": "charisma",
+    "edge": "edge",
+    "essence": "essence",
+    "intuition": "intuition",
+    "logic": "logic",
+    "magic": "magic",
+    "reaction": "reaction",
+    "resonance": "resonance",
+    "strength": "strength",
+    "unarmed": "unarmed",
+    "willpower": "willpower"
+  },
+  "commlinks": {
+    "carried": "commlink-carried",
+    "data": "commlink-data",
+    "firewall": "commlink-firewall",
+    "name": "commlink-name",
+    "notes": "commlink-notes",
+    "rating": "commlink-rating",
+    "slots": "commlink-slots"
+  }
+}

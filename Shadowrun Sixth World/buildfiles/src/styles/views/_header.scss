@@ -10,7 +10,7 @@ $sheet-namespace: '' !default;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 0rem 2em;
+    padding: 0rem 0.5rem;
     width: 100%;
 
     h1 {
@@ -25,7 +25,7 @@ $sheet-namespace: '' !default;
 
   .#{$sheet-namespace}nav-block {
     display: flex;
-    padding: 0em 1em;
+    padding: 0;
     width: 100%;
   }
 }

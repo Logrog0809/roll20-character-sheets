@@ -4,6 +4,10 @@
     return `${transform}-u`;
   }
 
+  function attr(string) {
+    return `attr_${string}`;
+  }
+
 mixin add-repeating-inputs(base, inputlist)
   each val in inputlist
     +repeating-input(base, val)

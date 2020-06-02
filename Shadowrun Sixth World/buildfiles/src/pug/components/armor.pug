@@ -1,3 +1,4 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
 .armor
   .card
@@ -7,20 +8,20 @@ include ../mixins.pug
       .flex-table
         .flex-table-header
           .col-3(data-i18n=i18nize('name')) Name
-          .col-2(data-i18n=i18nize('Rating')) Rating
-          .col-4(data-i18n=i18nize('Notes')) Notes
+          .col-1(data-i18n=i18nize('Rating')) Rating
+          .col-7(data-i18n=i18nize('Notes')) Notes
           .col-1(data-i18n=i18nize('carried')) Carried?
         .is-flex
           fieldset(class='repeating_armor')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_arname' type='text')
-              .col-2
-                input.input(name='attr_arrating' type='text')
-              .col-4
-                input.input(name='attr_arnotes' type='text')
+                input.input(name=attr(attrs.armor.name) type='text' value='')
+              .col-1
+                input.input(name=attr(attrs.armor.rating) type='number' value='0')
+              .col-7
+                input.input(name=attr(attrs.armor.notes) type='text' value='')
               .col-1
                 .checkbox
                   label
-                    input(name='attr_arcarried' type='checkbox' value='1')
+                    input(name=attr(attrs.armor.carried) type='checkbox' value='1')
                     span
