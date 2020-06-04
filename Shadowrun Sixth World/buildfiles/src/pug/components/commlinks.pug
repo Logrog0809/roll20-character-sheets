@@ -1,4 +1,6 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
+
 .commlinks
   .card
     .card-header
@@ -17,19 +19,19 @@ include ../mixins.pug
           fieldset(class='repeating_commlinks')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_iname' type='text' value='')
+                input.input(name=attr(attrs.commlinks.name) type='text' value='')
               .col-1
-                input.input(name='attr_irating' type='number' value='0')
+                input.input(name=attr(attrs.commlinks.rating) type='number' value='0' min='0')
               .col-1
-                input.input(name='attr_idataproc' type='number' value='0')
+                input.input(name=attr(attrs.commlinks.data) type='number' value='0' min='0')
               .col-1
-                input.input(name='attr_ifirewall' type='number' value='0')
+                input.input(name=attr(attrs.commlinks.firewall) type='number' value='0' min='0')
               .col-1
-                input.input(name='attr_islots' type='number' value='0')
+                input.input(name=attr(attrs.commlinks.slots) type='number' value='0' min='0')
               .col-4
-                input.input(name='attr_comm')
+                input.input(name=attr(attrs.commlinks.notes) value='')
               .col-1
                 .checkbox
                   label
-                    input(name='attr_icarried' type='checkbox' checked value='1')
+                    input(name=attr(attrs.commlinks.carried) type='checkbox' checked value='1')
                     span

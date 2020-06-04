@@ -1,7 +1,9 @@
 include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
 - var qualities = Object.values(require('@/data/qualities.json'));
 - var positive = qualities.filter(x => x.positive);
 - var negative = qualities.filter(x => !x.positive);
+
 .qualities
   .card
     .card-header
@@ -15,7 +17,7 @@ include ../mixins.pug
           fieldset(class='repeating_qualities')
             .row.is-vcentered
               .col-6
-                select.input(name='attr_qualityname')
+                select.input(name=attr(attrs.qualities.quality) value='')
                   option(value='')
                   option Other
                   optgroup(label='Positive')
@@ -25,4 +27,4 @@ include ../mixins.pug
                     each qual in negative
                       option(value=qual.name)= qual.display
               .col-6
-                input.input(name='attr_qualitynotes' type='text')
+                input.input(name=attr(attrs.qualities.notes) type='text' value='')

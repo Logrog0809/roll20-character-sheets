@@ -1,4 +1,6 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
+
 .complexforms
   .card
     .card-header
@@ -7,17 +9,17 @@ include ../mixins.pug
       .flex-table
         .flex-table-header
           .col-3(data-i18n=i18nize('name')) Name
-          .col-2(data-i18n=i18nize('fade')) Fade
-          .col-2(data-i18n=i18nize('duration')) Duration
-          .col-5(data-i18n=i18nize('notes')) Notes
+          .col-1(data-i18n=i18nize('fade')) Fade
+          .col-1(data-i18n=i18nize('duration')) Duration
+          .col-7(data-i18n=i18nize('notes')) Notes
         .is-flex
           fieldset(class='repeating_complexforms')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_cfname' type='text' value='')
-              .col-2
-                input.input(name='attr_cffade' type='number' value='0')
-              .col-2
-                input.input(name='attr_cfduration' type='text')
-              .col-5
-                input.input(name='attr_cfnotes' type='text' value='')
+                input.input(name=attr(attrs.complexforms.name) type='text' value='')
+              .col-1
+                input.input(name=attr(attrs.complexforms.fade) type='number' value='0')
+              .col-1
+                input.input(name=attr(attrs.complexforms.duration) type='text' value='')
+              .col-7
+                input.input(name=attr(attrs.complexforms.notes) type='text' value='')

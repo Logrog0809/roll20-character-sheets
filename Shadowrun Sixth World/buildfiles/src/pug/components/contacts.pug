@@ -1,4 +1,6 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
+
 .contacts
   .card
     .card-header
@@ -12,12 +14,12 @@ include ../mixins.pug
         fieldset(class='repeating_contacts')
           .row.is-vcentered
             .col-6
-              input.input(name='attr_cname' type='text')
+              input.input(name=attr(attrs.contacts.name) type='text' value='')
             .col-3
-              input.input(name='attr_cconnection' type='number' value='0')
+              input.input(name=attr(attrs.contacts.connection) type='number' value='0')
             .col-3
-              input.input(name='attr_cloyalty' type='number' value='0')
+              input.input(name=attr(attrs.contacts.loyalty) type='number' value='0')
           .row.is-vcentered
             .col-12
-              span Notes
-              textarea.textarea(name='attr_cnotes')
+              span(data-i18n=i18nize('Notes')) Notes
+              textarea.textarea(name=attr(attrs.contacts.notes) value='')

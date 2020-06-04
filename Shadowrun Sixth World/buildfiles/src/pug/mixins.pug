@@ -35,11 +35,11 @@ mixin repeating-input(base, name)
   input(name='attr_'+name type='text')
 
 mixin stat-block(title, attrname)
-  .attr-block.mb-1(class="attr-"+attrname)
+  .attr-block.mb-1(class=attrname)
     label.is-flex.is-vcentered
       span.is-half(data-i18n=i18nize(title))= title
       span.is-half
-        input.input(name="attr_"+attrname type='text' value='')&attributes(attributes)
+        input.input(name=attrname type='text' value='')&attributes(attributes)
 
 mixin stat-block-number(title, attrname)
   +stat-block(title, attrname)(type='number' min='0' value='0')&attributes(attributes)

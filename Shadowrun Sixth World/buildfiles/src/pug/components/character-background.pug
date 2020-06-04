@@ -1,3 +1,4 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
 
 .character-background
@@ -8,4 +9,4 @@ include ../mixins.pug
       .flex-table
         .is-flex
           .col-12
-            textarea.textarea(name='attr_background-desc')
+            textarea.textarea(name=attr(attrs.background))

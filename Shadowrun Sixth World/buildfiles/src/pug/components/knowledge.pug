@@ -1,3 +1,4 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
 
 .knowledge
@@ -12,4 +13,4 @@ include ../mixins.pug
           fieldset(class='repeating_knowledge')
             .row.is-vcentered
               .col-12
-                input.input(name='attr_knowledgetopic' type='text')
+                input.input(name=attr(attrs.knowledge.topic) type='text' value='')

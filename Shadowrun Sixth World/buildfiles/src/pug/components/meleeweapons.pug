@@ -1,6 +1,8 @@
 include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
 - var skills = require('@/data/skills.json')
 - var weaponskills = Object.values(skills).filter(x => x.weapons);
+
 .melee-weapons
   .card
     .card-header
@@ -8,76 +10,79 @@ include ../mixins.pug
     .card-body
       .flex-table
         .flex-table-header
-          .col-3(data-i18n=i18nize('weapon')) Weapon
+          .col-4(data-i18n=i18nize('weapon')) Weapon
           .col-1
             +popover('DV', 'Damage Value')
-          .col-3(data-i18n=i18nize('attack ratings')) Attack Ratings
-          .col-2(data-i18n=i18nize('carried')) Carried
+          .col-4(data-i18n=i18nize('attack ratings')) Attack Ratings
+          .col-1(data-i18n=i18nize('carried')) Carried
           .col-1(data-i18n=i18nize('wifi')) WiFi
           .col-1(data-i18n=i18nize('edit')) Edit
         .is-flex
-        fieldset(class='repeating_meleedweapons')
-          input.is-hidden(type='checkbox' readonly name='attr_mwisedit' value='1')
+        fieldset(class='repeating_meleeweapons')
+          input.is-hidden(type='checkbox' readonly name=attr(attrs.meleeweapons.edit) value='1')
           .row.is-vcentered
-            .col-3
-              span(name='attr_mwname') Name
+            .col-4
+              span(name=attr(attrs.meleeweapons.name)) Name
             .col-1
-              span(name='attr_mwdv') DV
-            .col-3
-              span(name='attr_mwarclose') Close
+              span(name=attr(attrs.meleeweapons.dv)) DV
+            .col-4
+              span(name=attr(attrs.meleeweapons.close)) Close
               | /
-              span(name='attr_mwarnear') Near
+              span(name=attr(attrs.meleeweapons.near)) Near
               | /
-              span(name='attr_mwarmedium') Medium
+              span(name=attr(attrs.meleeweapons.medium)) Medium
               | /
-              span(name='attr_mwarfar') Far
+              span(name=attr(attrs.meleeweapons.far)) Far
               | /
-              span(name='attr_mwarextreme') Extreme
-            .col-2
+              span(name=attr(attrs.meleeweapons.extreme)) Extreme
+            .col-1
               .checkbox
                 label
-                  input(name='attr_mwiscarried' type='checkbox' value='1')
+                  input(name=attr(attrs.meleeweapons.carried) type='checkbox' value='1')
                   span
             .col-1
               .checkbox
                 label
-                  input(name='attr_mwiswifi' type='checkbox' value='1')
+                  input(name=attr(attrs.meleeweapons.wifi) type='checkbox' value='1')
                   span
             .col-1
               .checkbox
                 label
-                  input(name='attr_mwisedit' type='checkbox' value='1')
+                  input(name=attr(attrs.meleeweapons.edit) type='checkbox' value='1')
                   span
           .row.is-vcentered.light-bg.edit-form
             .col-12
-              h3 Editing: #[span(name='attr_mwname')]
+              h3
+                span(data-i18n=i18nize('Editing')) Editing: 
+                span(name=attr(attrs.meleeweapons.name))
             .col-2 Weapon Info
-            .col-3
-              span Name
-              input.input(name='attr_mwname' type='text')
-            .col-2
+            .col-6
+              span(data-i18n=i18nize('Name')) Name
+              input.input(name=attr(attrs.meleeweapons.name) type='text' value='')
+            .col-1
               +popover('DV', 'Damage Value')
-              input.input(name='attr_mwdv' type='text')
-            .col-2
-              span Skill
-              select.input(name='attr_mwskill')
+              input.input(name=attr(attrs.meleeweapons.dv) type='text' value='')
+            .col-3
+              span(data-i18n=i18nize('Skill')) Skill
+              select.input(name=attr(attrs.meleeweapons.skill) value='')
                 option(value='') None
                 each skill in weaponskills
                   option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
           .row.is-vcentered.light-bg.edit-form
-            .col-2 Attack Ratings
             .col-2
-              span Close
-              input.input(name='attr_mwarclose' type='number' value='0')
+              span(data-i18n=i18nize('Attack Ratings')) Attack Ratings
             .col-2
-              span Near
-              input.input(name='attr_mwarnear' type='number' value='0')
+              span(data-i18n=i18nize('Close')) Close
+              input.input(name=attr(attrs.meleeweapons.close) type='number' value='0')
             .col-2
-              span Medium
-              input.input(name='attr_mwarmedium' type='number' value='0')
+              span(data-i18n=i18nize('Near')) Near
+              input.input(name=attr(attrs.meleeweapons.near) type='number' value='0')
             .col-2
-              span Far
-              input.input(name='attr_mwarfar' type='number' value='0')
+              span(data-i18n=i18nize('Medium')) Medium
+              input.input(name=attr(attrs.meleeweapons.medium) type='number' value='0')
             .col-2
-              span Extreme
-              input.input(name='attr_mwarextreme' type='number' value='0')
+              span(data-i18n=i18nize('Far')) Far
+              input.input(name=attr(attrs.meleeweapons.far) type='number' value='0')
+            .col-2
+              span(data-i18n=i18nize('Extreme')) Extreme
+              input.input(name=attr(attrs.meleeweapons.extreme) type='number' value='0')

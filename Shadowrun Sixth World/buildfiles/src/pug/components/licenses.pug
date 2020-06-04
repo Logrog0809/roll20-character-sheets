@@ -1,4 +1,6 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
+
 .licenses
   .card
     .card-header
@@ -6,11 +8,11 @@ include ../mixins.pug
     .card-body
       .flex-table
         .flex-table-header
-          .col-6(data-i18n=i18nize('category')) Category
-          .col-6(data-i18n=i18nize('Rating')) Rating
-        fieldset(class='repeating_lifestyles')
+          .col-9(data-i18n=i18nize('category')) Category
+          .col-3(data-i18n=i18nize('Rating')) Rating
+        fieldset(class='repeating_licenses')
           .row.is-vcentered
-            .col-6
-              input.input(name='attr_licname' type='text')
-            .col-6
-              input.input(name='attr_licrating' type='number' value='0')
+            .col-9
+              input.input(name=attr(attrs.licenses.category) type='text' value='')
+            .col-3
+              input.input(name=attr(attrs.licenses.rating) type='number' value='0')

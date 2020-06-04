@@ -1,26 +1,28 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
-.armor
+
+.items
   .card
     .card-header
       h3(data-i18n=i18nize('items')) Items
     .card-body
       .flex-table
         .flex-table-header
-          .col-3(data-i18n=i18nize('name')) Name
-          .col-2(data-i18n=i18nize('Rating')) Rating
-          .col-4(data-i18n=i18nize('Notes')) Notes
+          .col-4(data-i18n=i18nize('name')) Name
+          .col-1(data-i18n=i18nize('Rating')) Rating
+          .col-6(data-i18n=i18nize('Notes')) Notes
           .col-1(data-i18n=i18nize('carried')) Carried?
         .is-flex
           fieldset(class='repeating_items')
             .row.is-vcentered
-              .col-3
-                input.input(name='attr_iname' type='text')
-              .col-2
-                input.input(name='attr_irating' type='text')
               .col-4
-                input.input(name='attr_inotes' type='text')
+                input.input(name=attr(attrs.items.name) type='text' value='')
+              .col-1
+                input.input(name=attr(attrs.items.rating) type='text' value='')
+              .col-6
+                input.input(name=attr(attrs.items.notes) type='text' value='')
               .col-1
                 .checkbox
                   label
-                    input(name='attr_icarried' type='checkbox' checked value='1')
+                    input(name=attr(attrs.items.carried) type='checkbox' checked value='1')
                     span

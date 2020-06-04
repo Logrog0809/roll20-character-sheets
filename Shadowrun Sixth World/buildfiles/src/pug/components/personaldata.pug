@@ -1,17 +1,20 @@
+- var attrs = require('@/data/attributenames.json')
+include ../mixins.pug
+
 .personal-data
   .card
     .card-header
-      h3(data-i18n=i18nize('personaldata')) Personal Data
+      h3(data-i18n=i18nize('personal data')) Personal Data
     .card-body
-      +stat-block('Primary Alias', 'primary_alias')
-      +stat-block('Metatype', 'metatype')
-      +stat-block('Ethnicity', 'ethnicity')
-      +stat-block('Age', 'age')
-      +stat-block('Sex', 'sex')
-      +stat-block('Height', 'height')
-      +stat-block('Weight', 'weight')
-      +stat-block-number('Reputation', 'reputation')
-      +stat-block-number('Heat', 'heat')
-      +stat-block-number('Karma', 'karma')
-      +stat-block-number('Total Karma', 'tkarma')
-      +stat-block('Misc', 'misc')
+      +stat-block('Primary Alias', attr(attrs.personal.alias))
+      +stat-block('Metatype', attr(attrs.personal.metatype))
+      +stat-block('Ethnicity', attr(attrs.personal.ethnicity))
+      +stat-block('Age', attr(attrs.personal.age))
+      +stat-block('Sex', attr(attrs.personal.sex))
+      +stat-block('Height', attr(attrs.personal.height))
+      +stat-block('Weight', attr(attrs.personal.weight))
+      +stat-block-number('Reputation', attr(attrs.personal.reputation))
+      +stat-block-number('Heat', attr(attrs.personal.heat))
+      +stat-block-number('Karma', attr(attrs.personal.karma))
+      +stat-block-number('Total Karma', attr(attrs.personal.totalkarma))
+      +stat-block('Misc', attr(attrs.personal.misc))

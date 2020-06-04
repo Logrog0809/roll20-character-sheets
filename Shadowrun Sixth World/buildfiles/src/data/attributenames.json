@@ -20,6 +20,7 @@
     "unarmed": "unarmed",
     "willpower": "willpower"
   },
+  "background": "background",
   "commlinks": {
     "carried": "commlink-carried",
     "data": "commlink-data",
@@ -28,5 +29,97 @@
     "notes": "commlink-notes",
     "rating": "commlink-rating",
     "slots": "commlink-slots"
+  },
+  "complexforms": {
+    "duration": "complexform-duration",
+    "fade": "complexform-fade",
+    "name": "complexform-name",
+    "notes": "complexform-notes"
+  },
+  "contacts": {
+    "connection": "contact-connection",
+    "loyalty": "contact-loyalty",
+    "name": "contact-name",
+    "notes": "contact-notes"
+  },
+  "cyberdecks": {
+    "attack": "cyberdeck-attack",
+    "carried": "cyberdeck-carried",
+    "name": "cyberdeck-name",
+    "notes": "cyberdeck-notes",
+    "slots": "cyberdeck-slots",
+    "rating": "cyberdeck-rating",
+    "sleaze": "cyberdeck-sleaze"
+  },
+  "items": {
+    "carried": "item-carried",
+    "name": "item-name",
+    "notes": "item-notes",
+    "rating": "item-rating"
+  },
+  "knowledge": {
+    "topic": "knowledge-topic"
+  },
+  "languages": {
+    "level": "language-level",
+    "name": "language-name"
+  },
+  "licenses": {
+    "category": "license-category",
+    "rating": "license-rating"
+  },
+  "lifestyles": {
+    "name": "lifestyle-name",
+    "notes": "lifestyle-notes",
+    "primary": "lifestyle-primary",
+    "rate": "lifestyle-rate"
+  },
+  "meleeweapons": {
+    "carried": "meleeweapon-carried",
+    "close": "meleeweapon-close",
+    "dv": "meleeweapon-dv",
+    "edit": "meleeweapon-edit",
+    "extreme": "meleeweapon-extreme",
+    "far": "meleeweapon-far",
+    "medium": "meleeweapon-medium",
+    "name": "meleeweapon-name",
+    "near": "meleeweapon-near",
+    "skill": "meleeweapon-skill",
+    "wifi": "meleeweapon-wifi"
+  },
+  "notes": {
+    "note": "note-note"
+  },
+  "personal": {
+    "age": "personal-age",
+    "alias": "personal-alias",
+    "ethnicity": "personal-ethnicity",
+    "heat": "personal-heat",
+    "height": "personal-height",
+    "karma": "personal-karma",
+    "metatype": "personal-metatype",
+    "misc": "personal-misc",
+    "reputation": "personal-reputation",
+    "sex": "personal-sex",
+    "totalkarma": "personal-total-karma",
+    "weight": "personal-weight"
+  },
+  "qualities": {
+    "notes": "quality-notes",
+    "quality": "quality-name"
+  },
+  "rangedweapons": {
+    "ammo": "rangedweapon-ammo",
+    "carried": "rangedweapon-carried",
+    "close": "rangedweapon-close",
+    "dv": "rangedweapon-dv",
+    "edit": "rangedweapon-edit",
+    "extreme": "rangedweapon-extreme",
+    "far": "rangedweapon-far",
+    "medium": "rangedweapon-medium",
+    "name": "rangedweapon-name",
+    "near": "rangedweapon-near",
+    "skill": "rangedweapon-skill",
+    "wifi": "rangedweapon-wifi"
   }
 }

@@ -1,3 +1,4 @@
+- var attrs = require('@/data/attributenames.json')
 include ../mixins.pug
 
 .notes
@@ -9,4 +10,4 @@ include ../mixins.pug
         .is-flex
           fieldset(class='repeating_notes')
             .col-12
-              textarea.textarea(name='attr_notesnote')
+              textarea.textarea(name=attr(attrs.notes.note))
