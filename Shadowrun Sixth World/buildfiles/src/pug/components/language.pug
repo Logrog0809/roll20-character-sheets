@@ -17,7 +17,7 @@ include ../mixins.pug
                 input.input(name=attr(attrs.languages.name) type='text' value='')
               .col-6
                 select.input(name=attr(attrs.languages.level))
-                  option(value='1') Basic
-                  option(value='2') Specialist
-                  option(value='3') Expert
-                  option(value='4') Native
+                  option(value='1' data-i18n=i18nize('Basic')) Basic
+                  option(value='2' data-i18n=i18nize('Specialist')) Specialist
+                  option(value='3' data-i18n=i18nize('Expert')) Expert
+                  option(value='4' data-i18n=i18nize('Native')) Native

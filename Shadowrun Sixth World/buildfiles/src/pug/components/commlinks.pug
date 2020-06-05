@@ -12,8 +12,8 @@ include ../mixins.pug
           .col-1(data-i18n=i18nize('Rating')) Rating
           .col-1(data-i18n=i18nize('data')) Data
           .col-1(data-i18n=i18nize('Firewall')) Firewall
-          .col-1(data-i18n=i18nize('programs')) Programs
-          .col-4(data-i18n=i18nize('notes')) Notes
+          .col-2(data-i18n=i18nize('programs')) Programs
+          .col-3(data-i18n=i18nize('notes')) Notes
           .col-1(data-i18n=i18nize('carried')) Carried?
         .is-flex
           fieldset(class='repeating_commlinks')
@@ -28,7 +28,8 @@ include ../mixins.pug
                 input.input(name=attr(attrs.commlinks.firewall) type='number' value='0' min='0')
               .col-1
                 input.input(name=attr(attrs.commlinks.slots) type='number' value='0' min='0')
-              .col-4
+              .col-1
+              .col-3
                 input.input(name=attr(attrs.commlinks.notes) value='')
               .col-1
                 .checkbox

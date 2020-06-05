@@ -7,7 +7,7 @@ $input-color: #5a5a5a;
 $primary-color: #55b298;
 $primary-color-hover: #5eb69d;
 
-input[name='attr_show_minty']:checked ~ .#{$sheet-namespace}minty-theme {
+input[name='attr_show-minty']:checked ~ .#{$sheet-namespace}minty-theme {
   background-color: $background-color;
   color: $font-color;
 

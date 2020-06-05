@@ -1,5 +1,7 @@
 include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
 - var sprites = require('@/data/sprites.json')
+
 .sprites
   .card
     .card-header
@@ -16,17 +18,17 @@ include ../mixins.pug
           fieldset(class='repeating_sprites')
             .row.is-vcentered
               .col-3
-                input.input(name='attr_spritename' type='text')
+                input.input(name=attr(attrs.sprites.name) type='text' value='')
               .col-2
-                select.input(name='attr_spritetype')
+                select.input(name=attr(attrs.sprites.type) value='')
                   each sprite in sprites
                     option(data-i18n=i18nize(sprite.name) value=sprite.name)= sprite.display
               .col-2
-                input.input(name='attr_spriterating' type='number' value='0')
+                input.input(name=attr(attrs.sprites.rating) type='number' value='0')
               .col-2
-                input.input(name='attr_spritetasks' type='number' value='0')
+                input.input(name=attr(attrs.sprites.tasks) type='number' value='0')
               .col-1
                 .checkbox
                   label
-                    input(name='attr_spriteregistered' type='checkbox' value='1')
+                    input(name=attr(attrs.sprites.registered) type='checkbox' value='1')
                     span

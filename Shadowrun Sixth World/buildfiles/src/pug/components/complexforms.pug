@@ -10,8 +10,8 @@ include ../mixins.pug
         .flex-table-header
           .col-3(data-i18n=i18nize('name')) Name
           .col-1(data-i18n=i18nize('fade')) Fade
-          .col-1(data-i18n=i18nize('duration')) Duration
-          .col-7(data-i18n=i18nize('notes')) Notes
+          .col-2(data-i18n=i18nize('duration')) Duration
+          .col-6(data-i18n=i18nize('notes')) Notes
         .is-flex
           fieldset(class='repeating_complexforms')
             .row.is-vcentered
@@ -21,5 +21,6 @@ include ../mixins.pug
                 input.input(name=attr(attrs.complexforms.fade) type='number' value='0')
               .col-1
                 input.input(name=attr(attrs.complexforms.duration) type='text' value='')
+              .col-1
               .col-7
                 input.input(name=attr(attrs.complexforms.notes) type='text' value='')

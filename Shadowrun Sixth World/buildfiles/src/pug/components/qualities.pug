@@ -19,12 +19,12 @@ include ../mixins.pug
               .col-6
                 select.input(name=attr(attrs.qualities.quality) value='')
                   option(value='')
-                  option Other
+                  option(data-i18n=i18nize('Other')) Other
                   optgroup(label='Positive')
                     each qual in positive
-                      option(value=qual.name)= qual.display
+                      option(value=qual.name data-i18n=i18nize(qual.display))= qual.display
                   optgroup(label='Negative')
                     each qual in negative
-                      option(value=qual.name)= qual.display
+                      option(value=qual.name data-i18n=i18nize(qual.display))= qual.display
               .col-6
                 input.input(name=attr(attrs.qualities.notes) type='text' value='')

@@ -8,7 +8,7 @@ $sheet-namespace: '' !default;
       display: none;
     }
 
-    input[name=attr_mwisedit]:checked ~ .#{$sheet-namespace}edit-form {
+    input[name=attr_meleeweapon-edit]:checked ~ .#{$sheet-namespace}edit-form {
       display: flex;
     }
   }

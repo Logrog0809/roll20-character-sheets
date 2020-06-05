@@ -11,15 +11,16 @@ include ../mixins.pug
           .col-6(data-i18n=i18nize('name')) Name
           .col-3(data-i18n=i18nize('connection')) Connection
           .col-3(data-i18n=i18nize('loyalty')) Loyalty
-        fieldset(class='repeating_contacts')
-          .row.is-vcentered
-            .col-6
-              input.input(name=attr(attrs.contacts.name) type='text' value='')
-            .col-3
-              input.input(name=attr(attrs.contacts.connection) type='number' value='0')
-            .col-3
-              input.input(name=attr(attrs.contacts.loyalty) type='number' value='0')
-          .row.is-vcentered
-            .col-12
-              span(data-i18n=i18nize('Notes')) Notes
-              textarea.textarea(name=attr(attrs.contacts.notes) value='')
+        .is-flex
+          fieldset(class='repeating_contacts')
+            .row.is-vcentered
+              .col-6
+                input.input(name=attr(attrs.contacts.name) type='text' value='')
+              .col-3
+                input.input(name=attr(attrs.contacts.connection) type='number' value='0')
+              .col-3
+                input.input(name=attr(attrs.contacts.loyalty) type='number' value='0')
+            .row.is-vcentered
+              .col-12
+                span(data-i18n=i18nize('Notes')) Notes
+                textarea.textarea(name=attr(attrs.contacts.notes) value='')

@@ -17,13 +17,13 @@ mixin condition-track(base, count)
   while n < count
     - n++
     .condition-box
-      input(type='hidden' name='attr_'+base+'_condition_'+n)
+      input(type='hidden' name=attr(`${base}-condition-${n}`))
 
 mixin hidden-attr(name)
-  input(type='hidden' name='attr_'+name)&attributes(attributes)
+  input(type='hidden' name=attr(name))&attributes(attributes)
 
 mixin hidden-attr-check(name)
-  input.is-hidden(type='checkbox' name='attr_'+name value="1")&attributes(attributes)
+  input.is-hidden(type='checkbox' name=attr(name) value="1")&attributes(attributes)
 
 mixin popover(initialText, popoverText)
   span.popover(aria-label=popoverText data-i18n-aria-label=i18nize(popoverText) data-i18n=i18nize(initialText))= initialText
@@ -32,7 +32,7 @@ mixin repeating-li(base, display, name, i18n=name)
   li(class=base+'-'+name data-i18n=i18nize(display))= display
 
 mixin repeating-input(base, name)
-  input(name='attr_'+name type='text')
+  input(name=attr(name) type='text')
 
 mixin stat-block(title, attrname)
   .attr-block.mb-1(class=attrname)

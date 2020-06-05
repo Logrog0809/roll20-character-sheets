@@ -1,7 +1,7 @@
 include ../mixins.pug
 
 mixin navbutton(view, title)
-  button(type='action' data-view=view class='nav-control-'+view name='act_showview_'+view data-i18n=i18nize(title))= title
+  button(type='action' data-view=view class='nav-control-'+view name='act_showview-'+view data-i18n=i18nize(title))= title
 
 .view.sr6cs-header
   .header-block
@@ -9,7 +9,7 @@ mixin navbutton(view, title)
     .character-name
       label.is-flex.is-vcentered
         span(data-i18n=i18nize('character')) Character
-        input(name='attr_character_name' type='text' readonly tabindex='-1')
+        input(name=attr('character_name') type='text' readonly tabindex='-1')
   .nav-block
     +navbutton('overview', 'Overview')
     +navbutton('character', 'Character')

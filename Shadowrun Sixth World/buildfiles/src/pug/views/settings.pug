@@ -1,8 +1,12 @@
+include ../mixins.pug
+
 .view.view-settings
-  h3 Select Theme
+  h3(data-i18n=i18nize('Select Theme')) Select Theme
 
   .theme-selection
-    label Darkly
-      input(type='radio' name='attr_selected_theme_val' value='1' checked)
-    label Minty
-      input(type='radio' name='attr_selected_theme_val' value='2')
+    label
+      span(data-i18n=i18nize('Darkly')) Darkly
+      input(type='radio' name=attr('selected-theme-val') value='1' checked)
+    label
+      span(data-i18n=i18nize('Minty')) Minty
+      input(type='radio' name=attr('selected-theme-val') value='2')

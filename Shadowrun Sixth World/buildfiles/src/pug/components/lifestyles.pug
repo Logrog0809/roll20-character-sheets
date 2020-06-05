@@ -11,18 +11,19 @@ include ../mixins.pug
           .col-7(data-i18n=i18nize('name')) Name
           .col-3(data-i18n=i18nize('Rate')) Rate
           .col-2(data-i18n=i18nize('primary')) Primary
-        fieldset(class='repeating_lifestyles')
-          .row.is-vcentered
-            .col-7
-              input.input(name=attr(attrs.lifestyles.name) type='text' value='')
-            .col-3
-              input.input(name=(attrs.lifestyles.rate) type='number' value='0')
-            .col-2
-              .checkbox
-                label
-                  input(name=(attrs.lifestyles.primary) type='checkbox' value='1')
-                  span
-          .row.is-vcentered
-            .col-12
-              span(data-i18n=i18nize('Notes')) Notes
-              textarea.textarea(name=(attrs.lifestyles.notes) value='')
+        .is-flex
+          fieldset(class='repeating_lifestyles')
+            .row.is-vcentered
+              .col-7
+                input.input(name=attr(attrs.lifestyles.name) type='text' value='')
+              .col-3
+                input.input(name=(attrs.lifestyles.rate) type='number' value='0')
+              .col-2
+                .checkbox
+                  label
+                    input(name=(attrs.lifestyles.primary) type='checkbox' value='1')
+                    span
+            .row.is-vcentered
+              .col-12
+                span(data-i18n=i18nize('Notes')) Notes
+                textarea.textarea(name=(attrs.lifestyles.notes) value='')

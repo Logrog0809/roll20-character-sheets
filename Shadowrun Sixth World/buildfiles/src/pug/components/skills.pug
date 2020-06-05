@@ -1,5 +1,7 @@
 include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
 - var skills = require('@/data/skills.json')
+
 .skills
   .card
     .card-header
@@ -8,36 +10,33 @@ include ../mixins.pug
       .flex-table
         .flex-table-header
           .col-4(data-i18n=i18nize('skill')) Skill
-          .col-2(data-i18n=i18nize('rank')) Rank
-          .col-1
-            +popover('Spec?', 'Specialization?')
-          .col-1
-            +popover('Exp?', 'Specialization?')
-          .col-4(data-i18n=i18nize('notes')) Notes
+          .col-1(data-i18n=i18nize('rank')) Rank
+          .col-2(data-i18n=i18nize('specialization')) Specialization
+          .col-5(data-i18n=i18nize('notes')) Notes
         .is-flex
           fieldset(class='repeating_skills')
             .row.is-vcentered
               .col-4
-                select.input(name='attr_skillname')
+                select.input(name=attr(attrs.skills.name) value='')
                   each skill in skills
-                    option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
-              .col-2
-                input.input(name='attr_skillrank' type='number' min='0' value='0')
+                    option(value=skill.name data-i18n=i18nize(skill.display))= skill.display
               .col-1
+                input.input(name=attr(attrs.skills.rank) type='number' min='0' value='0')
+              .col-2
                 .checkbox
                   label
-                    input(name='attr_skillhasspec' type='checkbox' value='1')
+                    input(name=attr(attrs.skills.hasspecialization)  type='checkbox' value='1')
                     span
-              .col-4
-                input.input(name='attr_skillnotes' type='text')
-              input.is-hidden(type='checkbox' name='attr_skillhasspec' value='1' readonly)
+              .col-5
+                input.input(name=attr(attrs.skills.notes) type='text' value='')
+              input.is-hidden(type='checkbox' name=attr(attrs.skills.hasspecialization) value='1' readonly)
               .col-6.light-bg
                 label.is-flex.is-vcentered
                   span.is-half(data-i18n=i18nize('specialization')) Specialization
                   span.is-half
-                    select.input(name='attr_skillspecialization')
-                      option(value='') None
-                      option(value='other') Other
+                    select.input(name=attr(attrs.skills.specialization) value='')
+                      option(value='' data-i18n=i18nize('none')) None
+                      option(value='other' data-i18n=i18nize('other')) Other
                       each skill in skills
                         optgroup(label=skill.display data-i18n-label=i18nize(skill.name))
                           each spec in skill.specializations
@@ -46,9 +45,9 @@ include ../mixins.pug
                 label.is-flex.is-vcentered
                   span.is-half(data-i18n=i18nize('expertise')) Expertise
                   span.is-half
-                    select.input(name='attr_skillexpertise')
-                      option(value='') None
-                      option(value='other') Other
+                    select.input(name=attr(attrs.skills.expertise) value='')
+                      option(value='' data-i18n=i18nize('none')) None
+                      option(value='other' data-i18n=i18nize('other')) Other
                       each skill in skills
                         optgroup(label=skill.display data-i18n-label=i18nize(skill.name))
                           each spec in skill.specializations

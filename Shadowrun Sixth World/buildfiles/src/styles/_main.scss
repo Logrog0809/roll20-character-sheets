@@ -33,7 +33,7 @@ body {
       display: none;
     }
 
-    input[name='attr_show_view_#{$page}']:checked ~ .#{$sheet-namespace}view-#{$page} {
+    input[name='attr_show-view-#{$page}']:checked ~ .#{$sheet-namespace}view-#{$page} {
       display: flex;
     }
   }

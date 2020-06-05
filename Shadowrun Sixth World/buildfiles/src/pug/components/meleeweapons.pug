@@ -18,71 +18,71 @@ include ../mixins.pug
           .col-1(data-i18n=i18nize('wifi')) WiFi
           .col-1(data-i18n=i18nize('edit')) Edit
         .is-flex
-        fieldset(class='repeating_meleeweapons')
-          input.is-hidden(type='checkbox' readonly name=attr(attrs.meleeweapons.edit) value='1')
-          .row.is-vcentered
-            .col-4
-              span(name=attr(attrs.meleeweapons.name)) Name
-            .col-1
-              span(name=attr(attrs.meleeweapons.dv)) DV
-            .col-4
-              span(name=attr(attrs.meleeweapons.close)) Close
-              | /
-              span(name=attr(attrs.meleeweapons.near)) Near
-              | /
-              span(name=attr(attrs.meleeweapons.medium)) Medium
-              | /
-              span(name=attr(attrs.meleeweapons.far)) Far
-              | /
-              span(name=attr(attrs.meleeweapons.extreme)) Extreme
-            .col-1
-              .checkbox
-                label
-                  input(name=attr(attrs.meleeweapons.carried) type='checkbox' value='1')
-                  span
-            .col-1
-              .checkbox
-                label
-                  input(name=attr(attrs.meleeweapons.wifi) type='checkbox' value='1')
-                  span
-            .col-1
-              .checkbox
-                label
-                  input(name=attr(attrs.meleeweapons.edit) type='checkbox' value='1')
-                  span
-          .row.is-vcentered.light-bg.edit-form
-            .col-12
-              h3
-                span(data-i18n=i18nize('Editing')) Editing: 
-                span(name=attr(attrs.meleeweapons.name))
-            .col-2 Weapon Info
-            .col-6
-              span(data-i18n=i18nize('Name')) Name
-              input.input(name=attr(attrs.meleeweapons.name) type='text' value='')
-            .col-1
-              +popover('DV', 'Damage Value')
-              input.input(name=attr(attrs.meleeweapons.dv) type='text' value='')
-            .col-3
-              span(data-i18n=i18nize('Skill')) Skill
-              select.input(name=attr(attrs.meleeweapons.skill) value='')
-                option(value='') None
-                each skill in weaponskills
-                  option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
-          .row.is-vcentered.light-bg.edit-form
-            .col-2
-              span(data-i18n=i18nize('Attack Ratings')) Attack Ratings
-            .col-2
-              span(data-i18n=i18nize('Close')) Close
-              input.input(name=attr(attrs.meleeweapons.close) type='number' value='0')
-            .col-2
-              span(data-i18n=i18nize('Near')) Near
-              input.input(name=attr(attrs.meleeweapons.near) type='number' value='0')
-            .col-2
-              span(data-i18n=i18nize('Medium')) Medium
-              input.input(name=attr(attrs.meleeweapons.medium) type='number' value='0')
-            .col-2
-              span(data-i18n=i18nize('Far')) Far
-              input.input(name=attr(attrs.meleeweapons.far) type='number' value='0')
-            .col-2
-              span(data-i18n=i18nize('Extreme')) Extreme
-              input.input(name=attr(attrs.meleeweapons.extreme) type='number' value='0')
+          fieldset(class='repeating_meleeweapons')
+            input.is-hidden(type='checkbox' readonly name=attr(attrs.meleeweapons.edit) value='1')
+            .row.is-vcentered
+              .col-4
+                span(name=attr(attrs.meleeweapons.name)) Name
+              .col-1
+                span(name=attr(attrs.meleeweapons.dv)) DV
+              .col-4
+                span(name=attr(attrs.meleeweapons.close)) Close
+                | /
+                span(name=attr(attrs.meleeweapons.near)) Near
+                | /
+                span(name=attr(attrs.meleeweapons.medium)) Medium
+                | /
+                span(name=attr(attrs.meleeweapons.far)) Far
+                | /
+                span(name=attr(attrs.meleeweapons.extreme)) Extreme
+              .col-1
+                .checkbox
+                  label
+                    input(name=attr(attrs.meleeweapons.carried) type='checkbox' value='1')
+                    span
+              .col-1
+                .checkbox
+                  label
+                    input(name=attr(attrs.meleeweapons.wifi) type='checkbox' value='1')
+                    span
+              .col-1
+                .checkbox
+                  label
+                    input(name=attr(attrs.meleeweapons.edit) type='checkbox' value='1')
+                    span
+            .row.is-vcentered.light-bg.edit-form
+              .col-12
+                h3
+                  span(data-i18n=i18nize('Editing')) Editing: 
+                  span(name=attr(attrs.meleeweapons.name))
+              .col-2(data-i18n=i18nize('Weapon Info')) Weapon Info
+              .col-6
+                span(data-i18n=i18nize('Name')) Name
+                input.input(name=attr(attrs.meleeweapons.name) type='text' value='')
+              .col-1
+                +popover('DV', 'Damage Value')
+                input.input(name=attr(attrs.meleeweapons.dv) type='text' value='')
+              .col-3
+                span(data-i18n=i18nize('Skill')) Skill
+                select.input(name=attr(attrs.meleeweapons.skill) value='')
+                  option(value='' data-i18n=i18nize('None')) None
+                  each skill in weaponskills
+                    option(value=skill.name data-i18n=i18nize(skill.name))= skill.display
+            .row.is-vcentered.light-bg.edit-form
+              .col-2
+                span(data-i18n=i18nize('Attack Ratings')) Attack Ratings
+              .col-2
+                span(data-i18n=i18nize('Close')) Close
+                input.input(name=attr(attrs.meleeweapons.close) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Near')) Near
+                input.input(name=attr(attrs.meleeweapons.near) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Medium')) Medium
+                input.input(name=attr(attrs.meleeweapons.medium) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Far')) Far
+                input.input(name=attr(attrs.meleeweapons.far) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Extreme')) Extreme
+                input.input(name=attr(attrs.meleeweapons.extreme) type='number' value='0')

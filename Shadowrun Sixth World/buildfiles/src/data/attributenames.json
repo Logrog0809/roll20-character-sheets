@@ -117,9 +117,31 @@
     "extreme": "rangedweapon-extreme",
     "far": "rangedweapon-far",
     "medium": "rangedweapon-medium",
+    "modes": "rangedweapon-firingmodes",
     "name": "rangedweapon-name",
     "near": "rangedweapon-near",
     "skill": "rangedweapon-skill",
     "wifi": "rangedweapon-wifi"
+  },
+  "sins": {
+    "description": "sin-description",
+    "name": "sin-name",
+    "rating": "sin-rating",
+    "type": "sin-type"
+  },
+  "skills": {
+    "expertise": "skill-expertise",
+    "hasspecialization": "skill-hasspecialization",
+    "name": "skill-name",
+    "notes": "skill-notes",
+    "rank": "skill-rank",
+    "specialization": "skill-specialization"
+  },
+  "sprites": {
+    "name": "sprite-name",
+    "rating": "sprite-rating",
+    "registered": "sprite-registered",
+    "tasks": "sprite-tasks",
+    "type": "sprite-type"
   }
 }
