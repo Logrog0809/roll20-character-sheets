@@ -1,0 +1,25 @@
+- var attrs = require('@/data/attributenames.json')
+include ../mixins.pug
+
+.augmentations
+  .card
+    .card-header
+      h3(data-i18n=i18nize('Augmentations')) Augmentations
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-5(data-i18n=i18nize('name')) Name
+          .col-1(data-i18n=i18nize('rating')) Rating
+          .col-1(data-i18n=i18nize('essence')) Essence
+          .col-5(data-i18n=i18nize('notes')) Notes
+        .is-flex
+          fieldset(class='repeating_augmentations')
+            .row.is-vcentered
+              .col-5
+                input.input(name=attr(attrs.augmentations.name) type='text' value='')
+              .col-1
+                input.input(name=attr(attrs.augmentations.rating) type='number' value='0')
+              .col-1
+                input.input(name=attr(attrs.augmentations.essence) type='number' value='0')
+              .col-5
+                input.input(name=attr(attrs.augmentations.notes) type='text' value='')

@@ -1,4 +1,9 @@
 {
+  "adeptpowers": {
+    "activation": "adept-activation",
+    "name": "adept-name",
+    "notes": "adept-notes"
+  },
   "armor": {
     "carried": "armor-carried",
     "name": "armor-name",
@@ -19,6 +24,12 @@
     "strength": "strength",
     "unarmed": "unarmed",
     "willpower": "willpower"
+  },
+  "augmentations": {
+    "essence": "augmentation-essence",
+    "name": "augmentation-name",
+    "notes": "augmentation-notes",
+    "rating": "augmentation-rating"
   },
   "background": "background",
   "commlinks": {
@@ -137,11 +148,34 @@
     "rank": "skill-rank",
     "specialization": "skill-specialization"
   },
+  "spells": {
+    "damagetype": "spell-damage-type",
+    "duration": "spell-duration",
+    "dv": "spell-drain-value",
+    "element": "spell-element",
+    "name": "spell-name",
+    "notes": "spell-notes",
+    "range": "spell-range",
+    "type": "spell-type"
+  },
   "sprites": {
     "name": "sprite-name",
     "rating": "sprite-rating",
     "registered": "sprite-registered",
     "tasks": "sprite-tasks",
     "type": "sprite-type"
+  },
+  "vehicles": {
+    "acceleration": "vehicle-acceleration",
+    "armor": "vehicle-armor",
+    "body": "vehicle-body",
+    "handling": "vehicle-handling",
+    "name": "vehicle-name",
+    "notes": "vehicle-notes",
+    "pilot": "vehicle-pilot",
+    "seats": "vehicle-seats",
+    "sensor": "vehicle-sensor",
+    "speedint": "vehicle-speedint",
+    "topspeed": "vehicle-topspeed"
   }
 }

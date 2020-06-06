@@ -1,0 +1,25 @@
+- var attrs = require('@/data/attributenames.json')
+include ../mixins.pug
+
+.adeptpowers
+  .card
+    .card-header
+      h3(data-i18n=i18nize('adept powers')) Adept Powers
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-4(data-i18n=i18nize('name')) Name
+          .col-2(data-i18n=i18nize('activation')) Activation
+          .col-6(data-i18n=i18nize('notes')) Notes
+        .is-flex
+          fieldset(class='repeating_adeptpowers')
+            .row.is-vcentered
+              .col-4
+                input.input(name=attr(attrs.adeptpowers.name) type='text' value='')
+              .col-2
+                select.input(name=attr(attrs.adeptpowers.activation) value='0')
+                  option(value='0' data-i18n=i18nize('Passive')) Passive
+                  option(value='1' data-i18n=i18nize('Minor Action')) Minor Action
+                  option(value='2' data-i18n=i18nize('Major Action')) Major Action
+              .col-6
+                input.input(name=attr(attrs.adeptpowers.notes) type='text' value='')

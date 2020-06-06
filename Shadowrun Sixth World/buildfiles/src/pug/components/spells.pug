@@ -1,0 +1,59 @@
+- var attrs = require('@/data/attributenames.json')
+include ../mixins.pug
+
+.spells
+  .card
+    .card-header
+      h3(data-i18n=i18nize('Spells')) Spells
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-2(data-i18n=i18nize('name')) Name
+          .col-1(data-i18n=i18nize('type')) Type
+          .col-2(data-i18n=i18nize('Range')) Range
+          .col-2(data-i18n=i18nize('damage type')) Damage Type
+          .col-2(data-i18n=i18nize('element')) Element
+          .col-2(data-i18n=i18nize('Duration')) Duration
+          .col-1
+            +popover('DV', 'Drain Value')
+        .is-flex
+          fieldset(class='repeating_spells')
+            .row.is-vcentered
+              .col-2
+                input.input(name=attr(attrs.spells.name) type='text' value='')
+              .col-1
+                select.input(name=(attrs.spells.type) value='') 
+                  option(value='M' data-i18n=i18nize('mana')) Mana
+                  option(value='P' data-i18n=i18nize('physical')) Physical
+              .col-2
+                select.input(name=(attrs.spells.range) value='') 
+                  option(value='T' data-i18n=i18nize('touch')) Touch
+                  option(value='LOS' data-i18n=i18nize('LOS')) LOS
+                  option(value='LOSA' data-i18n=i18nize('LOS (A)')) LOS (A)
+                  option(value='S' data-i18n=i18nize('spcial')) Special
+              .col-2
+                select.input(name=(attrs.spells.damagetype) value='') 
+                  option(value='')
+                  option(value='S' data-i18n=i18nize('stun')) Stun
+                  option(value='P' data-i18n=i18nize('physical')) Physical
+              .col-2
+                select.input(name=(attrs.spells.element) value='')
+                  option(value='')
+                  option(value='Ch' data-i18n=i18nize('chemical')) Chemical
+                  option(value='C' data-i18n=i18nize('cold')) Cold
+                  option(value='E' data-i18n=i18nize('electricity')) Electricity
+                  option(value='F' data-i18n=i18nize('fire')) Fire
+              .col-2
+                select.input(name=(attrs.spells.duration) value='')
+                  option(value='')
+                  option(value='I' data-i18n=i18nize('instant')) Instant
+                  option(value='L' data-i18n=i18nize('limited')) Limited
+                  option(value='P' data-i18n=i18nize('permanent')) Permanent
+                  option(value='S' data-i18n=i18nize('sustained')) Sustained
+              .col-1
+                input.input(name=attr(attrs.spells.dv) type='text' value='')
+            .row.is-vcentered
+              .col-1(data-i18n=i18nize('Notes')) Notes
+              .col-11
+                input.input(name=attr(attrs.spells.notes) type='text' value='')
+              

@@ -1,0 +1,46 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+
+.vehicles
+  .card
+    .card-header
+      h3(data-i18n=i18nize('Vehicles')) Vehicles
+    .card-body
+      .flex-table
+        fieldset(class='repeating_vehicles')
+          .is-flex
+            .row.is-vcentered
+              .col-3
+                span(data-i18n=i18nize('Name')) Name
+                input.input(name=attr(attrs.vehicles.name) type='text' value='')
+              .col-9
+                span(data-i18n=i18nize('Notes')) Notes
+                input.input(name=attr(attrs.vehicles.notes) type='text' value='')
+            .row.is-vcentered
+              .col-1
+                span(data-i18n=i18nize('Handling')) Handling
+                input.input(name=attr(attrs.vehicles.handling) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Acceleration')) Acceleration
+                input.input(name=attr(attrs.vehicles.acceleration) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Speed Interval')) Speed Interval
+                input.input(name=attr(attrs.vehicles.speedint) type='number' value='0')
+              .col-2
+                span(data-i18n=i18nize('Top Speed')) Top Speed
+                input.input(name=attr(attrs.vehicles.topspeed) type='number' value='0')
+              .col-1
+                span(data-i18n=i18nize('Body')) Body
+                input.input(name=attr(attrs.vehicles.body) type='number' value='0')
+              .col-1
+                span(data-i18n=i18nize('Armor')) Armor
+                input.input(name=attr(attrs.vehicles.armor) type='number' value='0')
+              .col-1
+                span(data-i18n=i18nize('Pilot')) Pilot
+                input.input(name=attr(attrs.vehicles.pilot) type='number' value='0')
+              .col-1
+                span(data-i18n=i18nize('Sensor')) Sensor
+                input.input(name=attr(attrs.vehicles.sensor) type='number' value='0')
+              .col-1
+                span(data-i18n=i18nize('Seats')) Seats
+                input.input(name=attr(attrs.vehicles.seats) type='number' value='0')
