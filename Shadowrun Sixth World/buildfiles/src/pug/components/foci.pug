@@ -1,0 +1,34 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+- var foci = require('@/data/foci.json')
+
+.foci
+  .card
+    .card-header
+      h3(data-i18n=i18nize('Foci')) Foci
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-2(data-i18n=i18nize('name')) Name
+          .col-3(data-i18n=i18nize('type')) Type
+          .col-1(data-i18n=i18nize('force')) Force
+          .col-1(data-i18n=i18nize('active')) Active
+          .col-5(data-i18n=i18nize('notes')) Notes
+        .is-flex
+          fieldset(class='repeating_foci')
+            .row.is-vcentered
+              .col-2
+                input.input(name=attr(attrs.foci.name) type='text' value='')
+              .col-3
+                select.input(name=attr(attrs.foci.type) value='')
+                  each focus in foci
+                    option(data-i18n=i18nize(`${focus.display} (${focus.category})`) value=focus.name)= `${focus.display} (${focus.category})`
+              .col-1
+                input.input(name=attr(attrs.foci.force) type='number' value='0')
+              .col-1
+                .checkbox
+                  label
+                    input(name=attr(attrs.foci.active) type='checkbox' value='1')
+                    span
+              .col-5
+                input.input(name=attr(attrs.foci.notes) type='text' value='')

@@ -62,6 +62,17 @@
     "rating": "cyberdeck-rating",
     "sleaze": "cyberdeck-sleaze"
   },
+  "echoes": {
+    "display": "echo-display",
+    "name": "echo-name"
+  },
+  "foci": {
+    "active": "focus-active",
+    "force": "focus-force",
+    "name": "focus-name",
+    "notes": "focus-notes",
+    "type": "focus-type"
+  },
   "items": {
     "carried": "item-carried",
     "name": "item-name",
@@ -84,6 +95,20 @@
     "notes": "lifestyle-notes",
     "primary": "lifestyle-primary",
     "rate": "lifestyle-rate"
+  },
+  "magicinfo": {
+    "initiation": "magic-initiation",
+    "mentorspirit": "magic-mentor-spirit",
+    "mentorspiritnotes": "magic-mentor-spirit-notes",
+    "tradition": "magic-tradition"
+  },
+  "matrixinfo": {
+    "icondescription": "matrixinfo-icon-description",
+    "submersiongrade": "matrixinfo-submersion-grade"
+  },
+  "metamagics": {
+    "name": "metamagic-name",
+    "notes": "metamagic-notes"
   },
   "meleeweapons": {
     "carried": "meleeweapon-carried",
@@ -174,6 +199,15 @@
     "notes": "spell-notes",
     "range": "spell-range",
     "type": "spell-type"
+  },
+  "spirits": {
+    "force": "spirit-force",
+    "hits": "spirit-hits",
+    "name": "spirit-name",
+    "notes": "spirit-notes",
+    "optionalpowers": "spirit-optional-powers",
+    "services": "spirit-services",
+    "type": "spirit-type"
   },
   "sprites": {
     "name": "sprite-name",

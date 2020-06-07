@@ -1,0 +1,37 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+- var spirits = require('@/data/spirits.json')
+
+.spirits
+  .card
+    .card-header
+      h3(data-i18n=i18nize('spirits')) Spirits
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-2(data-i18n=i18nize('name')) Name
+          .col-2(data-i18n=i18nize('type')) Type
+          .col-1(data-i18n=i18nize('Force')) Force
+          .col-1(data-i18n=i18nize('Services')) Services
+          .col-1(data-i18n=i18nize('Hits')) Hits
+          .col-2(data-i18n=i18nize('optional skills')) Optional Skills
+          .col-2(data-i18n=i18nize('notes')) Notes
+        .is-flex
+          fieldset(class='repeating_spirits')
+            .row.is-vcentered
+              .col-2
+                input.input(name=attr(attrs.spirits.name) type='text' value='')
+              .col-2
+                select.input(name=attr(attrs.spirits.type) value='')
+                  each spirit in spirits
+                    option(data-i18n=i18nize(spirit.display) value=spirit.name)= spirit.display
+              .col-1
+                input.input(name=attr(attrs.spirits.force) type='number' value='0')
+              .col-1
+                input.input(name=attr(attrs.spirits.services) type='number' value='0')
+              .col-1
+                input.input(name=attr(attrs.spirits.hits) type='number' value='0')
+              .col-2
+                input.input(name=attr(attrs.spirits.optionalpowers) type='text' value='')
+              .col-3
+                input.input(name=attr(attrs.spirits.notes) type='text' value='')

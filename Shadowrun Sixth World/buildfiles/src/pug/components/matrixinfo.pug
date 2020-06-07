@@ -1,0 +1,15 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+
+.matrixinfo
+  .card
+    .card-header
+      h3(data-i18n=i18nize('matrix info')) Matrix Info
+    .card-body
+      .is-flex
+        .col-2
+          span(data-i18n=i18nize('Submersion Grade')) Submersion Grade
+          input.input(name=attr(attrs.matrixinfo.submersiongrade) type='number' value='0')
+        .col-4
+          span(data-i18n=i18nize('Icon Description')) Icon Description
+          input.input(name=attr(attrs.matrixinfo.icondescription) type='text' value='')

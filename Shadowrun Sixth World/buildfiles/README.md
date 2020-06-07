@@ -8,10 +8,11 @@ To work on the project, ensure you have [NodeJS](https://nodejs.org/) installed,
 
 ## Programming Conventions
 
-  1. Name all editable fields **attr_[fieldname]**
-  2. Name all auto fields **attr_auto_[fieldname]**
-  3. Use mixins and small components as much as possible
-  4. When setting i18n data, use the i18nize function
+  1. `mixins.pug` has a lot of pug templates and helper functions for you to use
+  2. Please use the `attr()` method for field names
+  3. All stored attributes should be kept in `attributenames.json`.
+  4. Use mixins and small components as much as possible
+  5. When setting i18n data, use the `i18nize()` function
 
 ## Legal Stuff
 

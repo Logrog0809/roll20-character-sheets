@@ -1,0 +1,25 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+- var traditions = require('@/data/traditions.json')
+
+.magicinfo
+  .card
+    .card-header
+      h3(data-i18n=i18nize('magic info')) Magic Info
+    .card-body
+      .is-flex
+        .col-2
+          span(data-i18n=i18nize('Initiate Grade')) Initiate Grade
+          input.input(name=attr(attrs.magicinfo.initiation) type='number' value='0')
+        .col-2
+          span(data-i18n=i18nize('Tradition')) Tradition
+          select.input(name=attr(attrs.magicinfo.tradition) value='')
+            option(value='' data-i18n=i18nize('none')) None
+            each tradition in traditions
+              option(data-i18n=i18nize(tradition.display) value=tradition.name)= tradition.display
+        .col-2
+          span(data-i18n=i18nize('Mentor Spirit')) Mentor Spirit
+          input.input(name=attr(attrs.magicinfo.mentorspirit) type='text' value='')
+        .col-3
+          span(data-i18n=i18nize('Mentor Spirit Notes')) Mentor Spirit Notes
+          input.input(name=attr(attrs.magicinfo.mentorspiritnotes) type='text' value='')

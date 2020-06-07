@@ -1,0 +1,12 @@
+{
+  "hermtic": {
+    "attribute": "logic",
+    "display": "Hermeticism",
+    "name": "hermetic"
+  },
+  "shamanic": {
+    "attribute": "charisma",
+    "display": "Shamanism",
+    "name": "shamanic"
+  }
+}

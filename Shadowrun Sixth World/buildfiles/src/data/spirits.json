@@ -1,0 +1,26 @@
+{
+  "air": {
+    "display": "Air",
+    "name": "air"
+  },
+  "beasts": {
+    "display": "Beasts",
+    "name": "beasts"
+  },
+  "earth": {
+    "display": "Earth",
+    "name": "earth"
+  },
+  "fire": {
+    "display": "Fire",
+    "name": "fire"
+  },
+  "kin": {
+    "display": "Kin",
+    "name": "kin"
+  },
+  "water": {
+    "display": "Water",
+    "name": "water"
+  }
+}

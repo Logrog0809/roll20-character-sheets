@@ -1,0 +1,22 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+- var metamagics = require('@/data/metamagics.json')
+
+.metamagics
+  .card
+    .card-header
+      h3(data-i18n=i18nize('Metamagics')) Metamagics
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-3(data-i18n=i18nize('name')) Name
+          .col-9(data-i18n=i18nize('notes')) Notes
+        .is-flex
+          fieldset(class='repeating_metamagics')
+            .row.is-vcentered
+              .col-3
+                select.input(name=attr(attrs.metamagics.name) value='')
+                  each metamagic in metamagics
+                    option(data-i18n=i18nize(metamagic.display) value=metamagic.name)= metamagic.display
+              .col-9
+                input.input(name=attr(attrs.metamagics.notes) type='text' value='')

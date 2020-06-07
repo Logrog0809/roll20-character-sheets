@@ -1,0 +1,30 @@
+{
+  "livingnetwork": {
+    "display": "Living Network",
+    "name": "livingnetwork"
+  },
+  "machinemind": {
+    "display": "Machine Mind",
+    "name": "machinemind"
+  },
+  "matrixattribute": {
+    "display": "Matrix Attribute Upgrade",
+    "name": "matrixattribute"
+  },
+  "neurofilter": {
+    "display": "NeuroFilter",
+    "name": "neurofilter"
+  },
+  "overclocking": {
+    "display": "Overclocking",
+    "name": "overclocking"
+  },
+  "resonancelink": {
+    "display": "Resonance Link",
+    "name": "resonancelink"
+  },
+  "skinlink": {
+    "display": "Skinlink",
+    "name": "skinlink"
+  }
+}

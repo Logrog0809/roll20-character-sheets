@@ -1,0 +1,77 @@
+{
+  "alchemical": {
+    "category": "Enchanting",
+    "display": "Alchemical",
+    "name": "alchemical"
+  },
+  "banishing": {
+    "category": "Spirit",
+    "display": "Banishing",
+    "name": "banishing"
+  },
+  "centering": {
+    "category": "Metamagic",
+    "display": "Centering",
+    "name": "centering"
+  },
+  "counterspelling": {
+    "category": "Spell",
+    "display": "Counterspelling",
+    "name": "counterspelling"
+  },
+  "disenchanting": {
+    "category": "Enchanting",
+    "display": "Disenchanting",
+    "name": "disenchanting"
+  },
+  "flexible": {
+    "category": "Metamagic",
+    "display": "Flexible Signature",
+    "name": "flexible"
+  },
+  "masking": {
+    "category": "Metamagic",
+    "display": "Masking",
+    "name": "masking"
+  },
+  "power": {
+    "category": "Metamagic",
+    "display": "Power",
+    "name": "power"
+  },
+  "qi": {
+    "category": "Qi",
+    "display": "Qi",
+    "name": "qi"
+  },
+  "ritual": {
+    "category": "Spell",
+    "display": "Ritual Spellcasting",
+    "name": "ritual"
+  },
+  "spellcasting": {
+    "category": "Spell",
+    "display": "Spellcasting",
+    "name": "spellcasting"
+  },
+  "spellshaping": {
+    "category": "Metamagic",
+    "display": "Spell Shaping",
+    "name": "spellshaping"
+  },
+  "summoning": {
+    "category": "Spirit",
+    "display": "Summoning",
+    "name": "summoning"
+  },
+  "sustaining": {
+    "category": "Spell",
+    "display": "Sustaining",
+    "name": "sustaining"
+  },
+  "weapon": {
+    "category": "Weapon",
+    "display": "Weapon",
+    "name": "weapon"
+  }
+}

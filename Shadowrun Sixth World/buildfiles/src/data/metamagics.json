@@ -1,0 +1,38 @@
+{
+  "adeptcentering": {
+    "display": "Adept Centering",
+    "name": "adeptcentering"
+  },
+  "centering": {
+    "display": "Centering",
+    "name": "centering"
+  },
+  "fixation": {
+    "display": "Fixation",
+    "name": "fixation"
+  },
+  "flexiblesignature": {
+    "display": "Flexible Signature",
+    "name": "flexiblesignature"
+  },
+  "masking": {
+    "display": "Masking",
+    "name": "masking"
+  },
+  "powerpoint": {
+    "display": "Power Point",
+    "name": "powerpoint"
+  },
+  "quickening": {
+    "display": "Quickening",
+    "name": "quickening"
+  },
+  "shielding": {
+    "display": "Shielding",
+    "name": "shielding"
+  },
+  "spellshaping": {
+    "display": "Spell Shaping",
+    "name": "spellshaping"
+  }
+}

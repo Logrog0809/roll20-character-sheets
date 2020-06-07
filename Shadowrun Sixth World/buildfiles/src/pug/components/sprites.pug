@@ -22,7 +22,7 @@ include ../mixins.pug
               .col-2
                 select.input(name=attr(attrs.sprites.type) value='')
                   each sprite in sprites
-                    option(data-i18n=i18nize(sprite.name) value=sprite.name)= sprite.display
+                    option(data-i18n=i18nize(sprite.display) value=sprite.name)= sprite.display
               .col-2
                 input.input(name=attr(attrs.sprites.rating) type='number' value='0')
               .col-2

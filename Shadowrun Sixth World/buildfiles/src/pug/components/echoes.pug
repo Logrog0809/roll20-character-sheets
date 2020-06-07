@@ -1,0 +1,22 @@
+include ../mixins.pug
+- var attrs = require('@/data/attributenames.json')
+- var echoes = require('@/data/echoes.json')
+
+.echoes
+  .card
+    .card-header
+      h3(data-i18n=i18nize('Echoes')) Echoes
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-3(data-i18n=i18nize('name')) Name
+          .col-9(data-i18n=i18nize('notes')) Notes
+        .is-flex
+          fieldset(class='repeating_echoes')
+            .row.is-vcentered
+              .col-3
+                select.input(name=attr(attrs.echoes.name) value='')
+                  each echo in echoes
+                    option(data-i18n=i18nize(echo.display) value=echo.name)= echo.display
+              .col-9
+                input.input(name=attr(attrs.echoes.notes) type='text' value='')
