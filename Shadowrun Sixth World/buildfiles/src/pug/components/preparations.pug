@@ -1,0 +1,38 @@
+- var attrs = require('@/data/attributenames.json')
+include ../mixins.pug
+
+.preparations
+  .card
+    .card-header
+      h3(data-i18n=i18nize('preparations')) Preparations
+    .card-body
+      .flex-table
+        .flex-table-header
+          .col-2(data-i18n=i18nize('item')) Item
+          .col-2(data-i18n=i18nize('spell')) Spell
+          .col-2(data-i18n=i18nize('trigger')) Trigger
+          .col-1(data-i18n=i18nize('Magic')) Magic
+          .col-1(data-i18n=i18nize('Potency')) Potency
+          .col-1(data-i18n=i18nize('Duration')) Duration
+          .col-3(data-i18n=i18nize('Notes')) Notes
+        .is-flex
+          fieldset(class='repeating_spells')
+            .row.is-vcentered
+              .col-2
+                input.input(name=attr(attrs.preparations.item) type='text' value='')
+              .col-2
+                input.input(name=attr(attrs.preparations.spell) type='text' value='')
+              .col-2
+                select.input(name=(attrs.preparations.trigger) value='') 
+                  option(value='1' data-i18n=i18nize('Command')) Command
+                  option(value='2' data-i18n=i18nize('contact')) Contact
+                  option(value='3' data-i18n=i18nize('Time')) Time
+              .col-1
+                input.input(name=attr(attrs.preparations.magic) type='number' value='0')
+              .col-1
+                input.input(name=attr(attrs.preparations.potency) type='number' value='0')
+              .col-1
+                input.input(name=attr(attrs.preparations.duration) type='number' value='0')
+              .col-3
+                input.input(name=attr(attrs.preparations.notes) type='text' value='')
+              
