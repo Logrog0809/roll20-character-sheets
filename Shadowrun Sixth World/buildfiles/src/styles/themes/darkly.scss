@@ -17,7 +17,7 @@ $row-light-background: #373737;
 $success-color: #00bc8c;
 $success-color-hover: #009670;
 
-input[name='attr_show-darkly']:checked ~ .#{$sheet-namespace}darkly-theme {
+input[name='attr_show_darkly']:checked ~ .#{$sheet-namespace}darkly-theme {
   background-color: $background-color;
   color: $font-color;
 

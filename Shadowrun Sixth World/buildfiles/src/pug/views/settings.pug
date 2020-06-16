@@ -1,12 +1,21 @@
 include ../mixins.pug
 
 .view.view-settings
-  h3(data-i18n=i18nize('Select Theme')) Select Theme
-
-  .theme-selection
-    label
-      span(data-i18n=i18nize('Darkly')) Darkly
-      input(type='radio' name=attr('selected-theme-val') value='1' checked)
-    label
-      span(data-i18n=i18nize('Minty')) Minty
-      input(type='radio' name=attr('selected-theme-val') value='2')
+  .col-6
+    .card
+      .card-header
+        h3(data-i18n=i18nize('Select Theme')) Select Theme
+      .card-body.is-flex
+        .col-4
+          .radio
+            label
+              input.radio(type='radio' name=attr('selected-theme-val') value='1' checked)
+              span.holder
+              span.text(data-i18n=i18nize('Darkly')) Darkly
+        .col-4
+          .radio
+            label
+              input(type='radio' name=attr('selected-theme-val') value='2')
+              span.holder
+              span.text(data-i18n=i18nize('Minty')) Minty
+      

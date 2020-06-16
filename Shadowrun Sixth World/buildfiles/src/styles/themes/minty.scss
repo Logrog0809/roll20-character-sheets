@@ -1,14 +1,26 @@
+@use '../variables' as *;
+
 $sheet-namespace: '' !default;
 $background-color: #fff;
+$card-background-color: rgba(0, 0, 0, 0.03);
+$checkbox-background: #78C2AD;
 $font-color: #888;
 $header-background: #78C2AD;
+$info-color: #6CC3D5;
+$info-color-hover: #4eb7cd;
 $input-border: #ced4da;
 $input-color: #5a5a5a;
+$nav-background: #F3969A;
+$nav-background-active: #f07f84;
+$nav-color: rgba(255, 255, 255, 0.6);
 $primary-color: #55b298;
 $primary-color-hover: #5eb69d;
+$row-light-background: #e9ecef;
+$success-color: #56CC9D;
+$success-color-hover: #3ac18c;
 
-input[name='attr_show-minty']:checked ~ .#{$sheet-namespace}minty-theme {
-  background-color: $background-color;
+input[name='attr_show_minty']:checked ~ .#{$sheet-namespace}minty-theme {
+ background-color: $background-color;
   color: $font-color;
 
   h1, h2, h3, h4, h5, h6 {
@@ -17,6 +29,15 @@ input[name='attr_show-minty']:checked ~ .#{$sheet-namespace}minty-theme {
 
   label {
     color: $font-color;
+  }
+
+  .#{$sheet-namespace}checkbox label input ~ span {
+    background-color: $checkbox-background;
+  }
+
+  .#{$sheet-namespace}checkbox label input:checked ~ span {
+    background-color: $primary-color;
+    color: white;
   }
 
   button {
@@ -35,6 +56,60 @@ input[name='attr_show-minty']:checked ~ .#{$sheet-namespace}minty-theme {
       background-color: $primary-color-hover;
       text-decoration: none;
     }
+
+    &.repcontrol_add,
+    &.repcontrol_edit {
+      background-image: none;
+      color: transparent;
+      outline: none;
+      position: relative;
+      text-shadow: none;
+      width: 2em;
+  
+      &:hover {
+        background-image: none;
+      }
+  
+      &::after {
+        left: 0.9em;
+        position: absolute;
+      }
+    }
+
+    &.repcontrol_add {
+      &::after {
+        content: 'New'
+      }
+    }
+
+    &.repcontrol_edit {
+      &::after {
+        content: 'Edit'
+      }
+    }
+
+    &.repcontrol_add,
+    &.repcontrol_edit {
+      &::after {
+        color: $font-color;
+      }
+    }
+
+    &.repcontrol_add {
+      background-color: $success-color;
+
+      &:hover {
+        background-color: $success-color-hover;
+      }
+    }
+
+    &.repcontrol_edit {
+      background-color: $info-color;
+
+      &:hover {
+        background-color: $info-color-hover;
+      }
+    }
   }
 
   input, select {
@@ -42,19 +117,59 @@ input[name='attr_show-minty']:checked ~ .#{$sheet-namespace}minty-theme {
     color: $input-color;
   }
 
+  @each $page in $pages {
+    input[name=attr_show-view-#{$page}]:checked ~ .#{$sheet-namespace}sr6cs-header .#{$sheet-namespace}nav-control-#{$page} {
+     background-color: $nav-background-active;
+     color: white;
+    }
+  }
+
   .#{$sheet-namespace}header-block {
     background-color: $header-background;
 
-    h1, label {
-      color: white;
+    h1 {
+      color: #fff;
     }
   }
 
   .#{$sheet-namespace}nav-block {
+    background: $nav-background;
+
     button {
+      background: $nav-background;
       border: none;
       border-radius: 0px;
+      color: $nav-color;
       display: block;
+
+      &:hover {
+        background-color: $nav-background-active;
+        color: white;
+      }
+    }
+  }
+
+  .#{$sheet-namespace}card {
+    background-color: $background-color;
+    border: 1px solid $primary-color;
+
+    .#{$sheet-namespace}card-header {
+      background-color: $card-background-color;
+    }
+  }
+
+  .#{$sheet-namespace}flex-table {
+    .#{$sheet-namespace}flex-table-header {
+      border-top: 2px solid $card-background-color;
+      border-bottom: 1px solid $card-background-color;
+    }
+
+    .#{$sheet-namespace}light-bg {
+      background-color: $row-light-background;
+    }
+
+    .#{$sheet-namespace}row {
+      border-bottom: 1px solid $card-background-color;
     }
   }
 }

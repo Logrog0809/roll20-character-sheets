@@ -81,4 +81,34 @@ $sheet-namespace: '' !default;
       }
     }
   }
+
+  .#{$sheet-namespace}radio {
+    label {
+      cursor: pointer;
+      .#{$sheet-namespace}holder {
+        &::before {
+          background-color: #fff;
+          border: 1px solid darken(#adb5bd, 25%);
+          border-radius: 10px;
+          content: "";
+          display: inline-block;
+          height: 1em;
+          margin-right: 0.5em;
+          position: relative;
+          top: 0.2em;
+          width: 1em;
+          transition: all 250ms ease;
+        }
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked ~ .#{$sheet-namespace}holder::before {
+        background-color: #375a7f;
+        box-shadow: inset 0 0 0 4px #fff;
+      }
+    }
+  }
 }

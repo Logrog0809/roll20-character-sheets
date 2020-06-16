@@ -138,7 +138,7 @@ function updateView(view) {
   setAttrs(viewAttrs);
 }
 
-on('change:selected_theme_val', selectTheme);
+on('change:selected-theme-val', selectTheme);
 on('sheet:opened', sheetOpened);
 
 var attrArray = Object.values(attributes);
