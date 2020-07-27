@@ -12,8 +12,7 @@
         "isDefault": true
       },
       "label": "npm: build",
-      "detail": "webpack --config webpack.prod.js",
-      
+      "detail": "Runs the build.js script"
     }
   ]
 }
