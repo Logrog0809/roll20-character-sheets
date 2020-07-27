@@ -19,6 +19,14 @@ $sheet-namespace: '' !default;
     }
   }
 
+  .#{$sheet-namespace}row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.25rem 0;
+    vertical-align: top;
+    width: 100%;
+  }
+
   @each $margin in $margins {
     .#{$sheet-namespace}mb-#{$margin} {
       margin-bottom: #{$margin * .5}em;

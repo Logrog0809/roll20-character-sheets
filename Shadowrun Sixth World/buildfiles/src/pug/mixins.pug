@@ -8,6 +8,14 @@
     return `attr_${string}`;
   }
 
+  function attr_auto(string) {
+    return `attr_auto-${string}`
+  }
+
+  function attr_bonus(string) {
+    return `attr_bonus-${string}`
+  }
+
 mixin add-repeating-inputs(base, inputlist)
   each val in inputlist
     +repeating-input(base, val)

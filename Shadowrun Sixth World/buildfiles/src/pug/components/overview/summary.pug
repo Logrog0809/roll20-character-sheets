@@ -1,0 +1,31 @@
+- var attrs = require('@/data/attributenames.json')
+include ../../mixins.pug
+
+mixin attr-display(display, name)
+  .attribute-display
+    span(name=attr_auto(name))
+
+mixin overview-attr-block(display, stat)
+  .row
+    .col-6.attribute-display
+      span(data-i18n=i18nize(display))= display
+    .col-6.attribute-value
+      span(name=attr_auto(name))
+
+.summary
+  .attribute-block
+    .row
+      h3 Physical Attributes
+    +overview-attr-block('Body', attrs.attributes.body)
+    +overview-attr-block('Agility', attrs.attributes.agility)
+    +overview-attr-block('Reaction', attrs.attributes.reaction)
+    +overview-attr-block('Strength', attrs.attributes.strength)
+    .row
+      h3 Mental Attributes
+    +overview-attr-block('Willpower', attrs.attributes.willpower)
+    +overview-attr-block('Logic', attrs.attributes.logic)
+    +overview-attr-block('Intuition', attrs.attributes.intuition)
+    +overview-attr-block('Charisma', attrs.attributes.charisma)
+    .row
+      h3 Special Attributes
+    +overview-attr-block('Edge', attrs.attributes.edge)

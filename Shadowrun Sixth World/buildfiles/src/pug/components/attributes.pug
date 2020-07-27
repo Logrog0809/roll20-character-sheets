@@ -10,26 +10,27 @@ mixin attr-block(title, attrname)
     .col-1.text-center
       span +
     .col-2
-      input.input(name=attr(`${attrname}-bonus`) type='number' min='0' value='0')
+      input.input(name=attr_bonus(attrname) type='number' min='0' value='0')
+
     .col-1.text-center
       span &#61;
     .col-2
-      input.input(name=attr(`auto-${attrname}-total`) value='0' readonly tabindex='-1')
+      input.input(name=attr_auto(attrname) value='0' readonly tabindex='-1')
 
 mixin attr-block-only-bonus(title, attrname)
   .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)
     .col-4
       span(data-i18n=i18nize(title))= title
     .col-2
-      input.input(name=attr(`auto-${attrname}`) type='number' value='0' readonly tabindex='-1')
+      input.input(name=attr(attrname) type='number' value='0' readonly tabindex='-1')
     .col-1.text-center
       span +
     .col-2
-      input.input(name=attr(`${attrname}-bonus`) type='number' min='0' value='0')
+      input.input(name=attr_bonus(attrname) type='number' min='0' value='0')
     .col-1.text-center
       span &#61;
     .col-2
-      input.input(name=attr(`auto-${attrname}-total`) value='0' readonly tabindex='-1')      
+      input.input(name=attr_auto(attrname) value='0' readonly tabindex='-1')      
 
 mixin attr-block-no-bonus(title, attrname)
   .is-flex.is-vcentered.is-paddingless.mb-1(class='attr-'+attrname)

@@ -1,128 +1,134 @@
-const magicStrings = {
-  auto: 'auto',
-  bonus: 'bonus',
-  total: 'total'
-};
-
 const sheetUpdateCallbacks = {
   '1.0': function() {
-    log('Intro version. Updating to 1.1!');
+    logToConsole('Intro version. Updating to 1.1!');
     sheetUpdateCallbacks['1.1']();
   },
   '1.1': function() {
-    log('Sheet is up to date!');
+    logToConsole('Sheet is up to date!');
     setAttrs({ sheet_version: '1.1' });
   }
 };
 
 const spriteStats = {
   courier: {
-    attack: (l) => { return l; },
-    sleaze: (l) => { return l + 3; },
-    data: (l) => { return l + 1; },
-    firewall: (l) => { return l + 2; },
-    initiative: (l) => {
+    attack: (level) => { return level; },
+    sleaze: (level) => { return level + 3; },
+    data: (level) => { return level + 1; },
+    firewall: (level) => { return level + 2; },
+    initiative: (level) => {
       return {
-        bonus: (l*2)+1,
+        bonus: (level*2)+1,
         dice: 4
       };
     },
-    resonance: (l) => { return l; },
+    resonance: (level) => { return level; },
   },
   crack: {
-    attack: (l) => { return l; },
-    sleaze: (l) => { return l + 3; },
-    data: (l) => { return l + 2; },
-    firewall: (l) => { return l + 1; },
-    initiative: (l) => {
+    attack: (level) => { return level; },
+    sleaze: (level) => { return level + 3; },
+    data: (level) => { return level + 2; },
+    firewall: (level) => { return level + 1; },
+    initiative: (level) => {
       return {
-        bonus: (l*2)+2,
+        bonus: (level*2)+2,
         dice: 4
       };
     },
-    resonance: (l) => { return l; },
+    resonance: (level) => { return level; },
   },
   data: {
-    attack: (l) => { return l - 1; },
-    sleaze: (l) => { return l; },
-    data: (l) => { return l + 4; },
-    firewall: (l) => { return l + 1; },
-    initiative: (l) => {
+    attack: (level) => { return level - 1; },
+    sleaze: (level) => { return level; },
+    data: (level) => { return level + 4; },
+    firewall: (level) => { return level + 1; },
+    initiative: (level) => {
       return {
-        bonus: (l*2)+4,
+        bonus: (level*2)+4,
         dice: 4
       };
     },
-    resonance: (l) => { return l; },
+    resonance: (level) => { return level; },
   },
   fault: {
-    attack: (l) => { return l + 3; },
-    sleaze: (l) => { return l; },
-    data: (l) => { return l + 1; },
-    firewall: (l) => { return l + 2; },
-    initiative: (l) => {
+    attack: (level) => { return level + 3; },
+    sleaze: (level) => { return level; },
+    data: (level) => { return level + 1; },
+    firewall: (level) => { return level + 2; },
+    initiative: (level) => {
       return {
-        bonus: (l*2)+1,
+        bonus: (level*2)+1,
         dice: 4
       };
     },
-    resonance: (l) => { return l; },
+    resonance: (level) => { return level; },
   },
   machine: {
-    attack: (l) => { return l + 1; },
-    sleaze: (l) => { return l; },
-    data: (l) => { return l + 3; },
-    firewall: (l) => { return l + 2; },
-    initiative: (l) => {
+    attack: (level) => { return level + 1; },
+    sleaze: (level) => { return level; },
+    data: (level) => { return level + 3; },
+    firewall: (level) => { return level + 2; },
+    initiative: (level) => {
       return {
-        bonus: (l*2)+3,
+        bonus: (level*2)+3,
         dice: 4
       };
     },
-    resonance: (l) => { return l; },
+    resonance: (level) => { return level; },
   },
 };
 
-function log(output) {
+function getAttributeName(incomingAttribute) {
+  return incomingAttribute.name;
+}
+
+function getAttributeAutoName(incomingAttribute) {
+  return `auto-${incomingAttribute.name}`;
+}
+
+function getAttributeBonusName(incomingAttribute) {
+  return `bonus-${incomingAttribute.name}`;
+}
+
+function getViewName(view) {
+  return `show-view-${view}`;
+}
+
+function logToConsole(output) {
   console.log('[SR6CS]: ', output);
 }
 
-function selectTheme(eve) {
-  if (eve.newValue == 1) {
+function selectTheme(roll20event) {
+  if (roll20event.newValue == 1) {
     setAttrs({ show_darkly: 1, show_minty: 0 });
-  } else if (eve.newValue == 2) {
+  } else if (roll20event.newValue == 2) {
     setAttrs({ show_darkly: 0, show_minty: 1 });
   }
 }
 
-function sheetOpened() {
-  log('Thanks for using the Shadowrun 6e Charactersheet.');
+function onSheetOpened() {
+  logToConsole('Thanks for using the Shadowrun 6e Charactersheet.');
   updateView('overview');
 
   // Grab the version
   getAttrs(['sheet_version'], (values) => {
-    log(`You are currently using sheet version ${values.sheet_version}`);
+    logToConsole(`You are currently using sheet version ${values.sheet_version}`);
     
     if(sheetUpdateCallbacks[values.sheet_version]) {
       sheetUpdateCallbacks[values.sheet_version]();
     }
   });
-
-  getSectionIDs(['skills'], (values) => {
-    log(values);
-  });
 }
 
 function updateAttribute(attr) {
   if (attr.hasBonus) {
-    updateBonusAttr(attr);
+    updateAttributeTotal(attr);
   }
 }
 
-function updateBonusAttr(attr) {
+function updateAttributeTotal(attr) {
   const attrName = attr.name;
-  const bonusName = `${attr.name}_${magicStrings.bonus}`;
-  const totalName = `${magicStrings.auto}_${attr.name}_${magicStrings.total}`;
+  const bonusName = getAttributeBonusName(attr);
+  const totalName = getAttributeAutoName(attr);
   getAttrs([attrName, bonusName], (vals) => {
     const sum = parseInt(vals[attrName]) + parseInt(vals[bonusName]);
     const updateObj = {};
@@ -131,17 +137,17 @@ function updateBonusAttr(attr) {
   });
 }
 
-function updateView(view) {
-  const viewAttrs = {};
-  views.forEach((val) => viewAttrs[`show-view-${val}`] = 0);
-  viewAttrs[`show-view-${view}`] = 1;
-  setAttrs(viewAttrs);
+function updateView(selectedView) {
+  const updatedViewAttributes = {};
+  views.forEach(view => updatedViewAttributes[getViewName(view)] = 0);
+  updatedViewAttributes[getViewName(selectedView)] = 1;
+  setAttrs(updatedViewAttributes);
 }
 
 on('change:selected-theme-val', selectTheme);
-on('sheet:opened', sheetOpened);
+on('sheet:opened', onSheetOpened);
 
-var attrArray = Object.values(attributes);
-attrArray.forEach(attr => on(`change:${attr.name}`, (reve) => updateAttribute(attr, reve)));
-attrArray.filter(x => x.hasBonus).forEach(attr => on(`change:${attr.name}_${magicStrings.bonus}`, (reve) => updateBonusAttr(attr, reve)));
-views.forEach((view) => on(`clicked:showview-${view}`, (reve) => updateView(view, reve)));
+var attributeArray = Object.values(attributes);
+attributeArray.forEach(attribute => on(`change:${getAttributeName(attribute)}`, (roll20event) => updateAttribute(attribute, roll20event)));
+attributeArray.filter(x => x.hasBonus).forEach(attribute => on(`change:${getAttributeBonusName(attribute)}`, (roll20event) => updateAttributeTotal(attribute, roll20event)));
+views.forEach((view) => on(`clicked:showview-${view}`, (roll20event) => updateView(view, roll20event)));

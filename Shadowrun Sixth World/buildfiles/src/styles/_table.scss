@@ -9,13 +9,5 @@ $sheet-namespace: '' !default;
       padding: 0.25rem 0;
       vertical-align: bottom;
     }
-
-    .#{$sheet-namespace}row {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0.25rem 0;
-      vertical-align: top;
-      width: 100%;
-    }
   }
 }
