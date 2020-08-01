@@ -9,74 +9,6 @@ const sheetUpdateCallbacks = {
   }
 };
 
-const spriteStats = {
-  courier: {
-    attack: (level) => { return level; },
-    sleaze: (level) => { return level + 3; },
-    data: (level) => { return level + 1; },
-    firewall: (level) => { return level + 2; },
-    initiative: (level) => {
-      return {
-        bonus: (level*2)+1,
-        dice: 4
-      };
-    },
-    resonance: (level) => { return level; },
-  },
-  crack: {
-    attack: (level) => { return level; },
-    sleaze: (level) => { return level + 3; },
-    data: (level) => { return level + 2; },
-    firewall: (level) => { return level + 1; },
-    initiative: (level) => {
-      return {
-        bonus: (level*2)+2,
-        dice: 4
-      };
-    },
-    resonance: (level) => { return level; },
-  },
-  data: {
-    attack: (level) => { return level - 1; },
-    sleaze: (level) => { return level; },
-    data: (level) => { return level + 4; },
-    firewall: (level) => { return level + 1; },
-    initiative: (level) => {
-      return {
-        bonus: (level*2)+4,
-        dice: 4
-      };
-    },
-    resonance: (level) => { return level; },
-  },
-  fault: {
-    attack: (level) => { return level + 3; },
-    sleaze: (level) => { return level; },
-    data: (level) => { return level + 1; },
-    firewall: (level) => { return level + 2; },
-    initiative: (level) => {
-      return {
-        bonus: (level*2)+1,
-        dice: 4
-      };
-    },
-    resonance: (level) => { return level; },
-  },
-  machine: {
-    attack: (level) => { return level + 1; },
-    sleaze: (level) => { return level; },
-    data: (level) => { return level + 3; },
-    firewall: (level) => { return level + 2; },
-    initiative: (level) => {
-      return {
-        bonus: (level*2)+3,
-        dice: 4
-      };
-    },
-    resonance: (level) => { return level; },
-  },
-};
-
 function getAttributeName(incomingAttribute) {
   return incomingAttribute.name;
 }
@@ -120,6 +52,7 @@ function onSheetOpened() {
 }
 
 function updateAttribute(attr) {
+  console.log('Updating', attr);
   if (attr.hasBonus) {
     updateAttributeTotal(attr);
   }
@@ -137,6 +70,10 @@ function updateAttributeTotal(attr) {
   });
 }
 
+function updateRepeating(roll20event) {
+  console.log('Update repeating', roll20event);
+}
+
 function updateView(selectedView) {
   const updatedViewAttributes = {};
   views.forEach(view => updatedViewAttributes[getViewName(view)] = 0);
@@ -146,8 +83,18 @@ function updateView(selectedView) {
 
 on('change:selected-theme-val', selectTheme);
 on('sheet:opened', onSheetOpened);
+on('change:repeating_rangedweapons', (roll20event) => {
+  logToConsole(roll20event);
+});
+on('remove:repeating_rangedweapons', (roll20event) => {
+  logToConsole(roll20event);
+});
+
 
 var attributeArray = Object.values(attributes);
+var attributenamekeys = Object.keys(attributenames);
+console.log(attributenamekeys);
+attributenamekeys.forEach(x => on(`change:repeating_${x}`, (roll20event) => updateRepeating(roll20event)));
 attributeArray.forEach(attribute => on(`change:${getAttributeName(attribute)}`, (roll20event) => updateAttribute(attribute, roll20event)));
 attributeArray.filter(x => x.hasBonus).forEach(attribute => on(`change:${getAttributeBonusName(attribute)}`, (roll20event) => updateAttributeTotal(attribute, roll20event)));
 views.forEach((view) => on(`clicked:showview-${view}`, (roll20event) => updateView(view, roll20event)));

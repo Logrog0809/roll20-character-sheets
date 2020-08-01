@@ -28,6 +28,7 @@
   },
   "globals": {
     "attributes": "readonly",
+    "attributenames": "readonly",
     "getAttrs": "readonly",
     "getSectionIDs": "readonly",
     "on": "readonly",

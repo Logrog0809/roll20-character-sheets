@@ -9,7 +9,7 @@ include ../mixins.pug
       .is-flex
         .col-3
           span(data-i18n=i18nize('Submersion Grade')) Submersion Grade
-          input.input(name=attr(attrs.matrixinfo.submersiongrade) type='number' value='0')
+          input.input(name=attr(attrs.matrixinfo.submersiongrade) type='number' value='0' min='0')
         .col-4
           span(data-i18n=i18nize('Icon Description')) Icon Description
           input.input(name=attr(attrs.matrixinfo.icondescription) type='text' value='')

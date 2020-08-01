@@ -138,7 +138,8 @@
     "reputation": "personal-reputation",
     "sex": "personal-sex",
     "totalkarma": "personal-total-karma",
-    "weight": "personal-weight"
+    "weight": "personal-weight",
+    "yen": "personal-yen"
   },
   "preparations": {
     "duration": "preparation-duration",
@@ -175,6 +176,11 @@
     "name": "ritual-name",
     "spotter": "ritual-spotter",
     "threshold": "ritual-threshold"
+  },
+  "settings": {
+    "hasMagic": "settings-has-magic",
+    "hasRanged": "settings-has-ranged",
+    "hasResonance": "settings-has-resonance"
   },
   "sins": {
     "description": "sin-description",

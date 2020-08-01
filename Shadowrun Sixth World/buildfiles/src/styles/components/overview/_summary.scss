@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  .#{$sheet-namespace}attribute-summary {
+    .#{$sheet-namespace}attribute-display, .#{$sheet-namespace}attribute-value {
+      display: inline-flex;
+    }
+
+    margin-right: 0.5em;
+  }
+}

@@ -22,6 +22,7 @@ input.is-hidden(type='checkbox' name=attr('show_minty') value='1')
   include ./views/settings.pug
 script(type='text/worker')
   | const attributes = #[!= JSON.stringify(require('@/data/attributes.json')) ];
+  | const attributenames = #[!= JSON.stringify(require('@/data/attributenames.json')) ];
   | const qualities = #[!= JSON.stringify(require('@/data/qualities.json')) ];
   | const skills = #[!= JSON.stringify(require('@/data/skills.json')) ];
   | const sprites = #[!= JSON.stringify(require('@/data/sprites.json')) ];

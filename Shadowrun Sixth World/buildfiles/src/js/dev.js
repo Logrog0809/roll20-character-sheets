@@ -21,4 +21,8 @@ window.addEventListener('load', () => {
       }
     });
   });
+
+  document.querySelectorAll('span[name^=attr_auto-]').forEach((ele) => {
+    ele.innerHTML = 2;
+  });
 });
