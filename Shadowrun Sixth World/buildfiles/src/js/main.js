@@ -37,18 +37,31 @@ function selectTheme(roll20event) {
   }
 }
 
+function updateSheetVersion(currentVersion) {
+  logToConsole(`You are currently using sheet version ${currentVersion}`);
+    
+  if(sheetUpdateCallbacks[currentVersion]) {
+    sheetUpdateCallbacks[currentVersion]();
+  }
+}
+
 function onSheetOpened() {
   logToConsole('Thanks for using the Shadowrun 6e Charactersheet.');
   updateView('overview');
 
   // Grab the version
   getAttrs(['sheet_version'], (values) => {
-    logToConsole(`You are currently using sheet version ${values.sheet_version}`);
-    
-    if(sheetUpdateCallbacks[values.sheet_version]) {
-      sheetUpdateCallbacks[values.sheet_version]();
+    if (!values.sheet_version) {
+      setAttrs({ sheet_version: '1.0' });
+      return;
     }
+
+    updateSheetVersion(values.sheet_version);
   });
+}
+
+function removeRepeating(roll20event) {
+  logToConsole(roll20event);
 }
 
 function updateAttribute(attr) {
@@ -71,7 +84,7 @@ function updateAttributeTotal(attr) {
 }
 
 function updateRepeating(roll20event) {
-  console.log('Update repeating', roll20event);
+  logToConsole(roll20event);
 }
 
 function updateView(selectedView) {
@@ -83,18 +96,13 @@ function updateView(selectedView) {
 
 on('change:selected-theme-val', selectTheme);
 on('sheet:opened', onSheetOpened);
-on('change:repeating_rangedweapons', (roll20event) => {
-  logToConsole(roll20event);
-});
-on('remove:repeating_rangedweapons', (roll20event) => {
-  logToConsole(roll20event);
-});
 
 
 var attributeArray = Object.values(attributes);
 var attributenamekeys = Object.keys(attributenames);
-console.log(attributenamekeys);
+
 attributenamekeys.forEach(x => on(`change:repeating_${x}`, (roll20event) => updateRepeating(roll20event)));
+attributenamekeys.forEach(x => on(`delete:repeating_${x}`, (roll20event) => removeRepeating(roll20event)));
 attributeArray.forEach(attribute => on(`change:${getAttributeName(attribute)}`, (roll20event) => updateAttribute(attribute, roll20event)));
 attributeArray.filter(x => x.hasBonus).forEach(attribute => on(`change:${getAttributeBonusName(attribute)}`, (roll20event) => updateAttributeTotal(attribute, roll20event)));
 views.forEach((view) => on(`clicked:showview-${view}`, (roll20event) => updateView(view, roll20event)));

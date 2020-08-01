@@ -9,7 +9,8 @@ const writeFile = util.promisify(fs.writeFile);
 
 function addTranslationShims(translationData) {
   console.log('Adding translation items missed by i18nize in aria-labels');
-  translationData['dv-u'] = 'Damage Value';
+  translationData['dv-u'] = 'DV';
+  translationData['damage_value-u'] = 'Damage Value';
 }
 
 async function buildSheet() {
