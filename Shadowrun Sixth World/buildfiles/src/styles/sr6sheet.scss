@@ -17,5 +17,6 @@
 @use './components/meleeweapons' with ($sheet-namespace: $sheet-namespace);
 @use './components/rangedweapons' with ($sheet-namespace: $sheet-namespace);
 @use './components/overview/summary' with ($sheet-namespace: $sheet-namespace);
+@use './components/overview/rangedweapons' as rangedweaponsoverview with ($sheet-namespace: $sheet-namespace);
 
 @import url("'https://fonts.googleapis.com/css?family=Baloo+2|Ovo|Zilla+Slab&display=swap'");

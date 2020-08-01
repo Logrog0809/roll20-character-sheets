@@ -179,7 +179,7 @@
   },
   "settings": {
     "hasMagic": "settings-has-magic",
-    "hasRanged": "settings-has-ranged",
+    "hasrangedweapons": "settings-has-ranged",
     "hasResonance": "settings-has-resonance"
   },
   "sins": {

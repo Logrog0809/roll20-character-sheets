@@ -1,0 +1,19 @@
+@use '../../variables' as *;
+
+$sheet-namespace: '' !default;
+
+.#{$sheet-namespace}sr6cs {
+  .#{$sheet-namespace}ranged-weapons-overview {
+    .repcontrol {
+      display: none;
+    }
+    
+    .#{$sheet-namespace}card {
+      display: none;
+    }
+
+    input[name=attr_settings-has-ranged]:checked ~ .#{$sheet-namespace}card {
+      display: flex;
+    }
+  }
+}

@@ -78,16 +78,16 @@ include ../mixins.pug
                 span(data-i18n=i18nize('Attack Ratings')) Attack Ratings
               .col-2
                 span(data-i18n=i18nize('Close')) Close
-                input.input(name=attr(attrs.rangedweapons.close) type='number' value='0')
+                input.input(name=attr(attrs.rangedweapons.close) type='number' value='0' min='0')
               .col-2
                 span(data-i18n=i18nize('Near')) Near
-                input.input(name=attr(attrs.rangedweapons.near) type='number' value='0')
+                input.input(name=attr(attrs.rangedweapons.near) type='number' value='0' min='0')
               .col-2
                 span(data-i18n=i18nize('Medium')) Medium
-                input.input(name=attr(attrs.rangedweapons.medium) type='number' value='0')
+                input.input(name=attr(attrs.rangedweapons.medium) type='number' value='0' min='0')
               .col-2
                 span(data-i18n=i18nize('Far')) Far
-                input.input(name=attr(attrs.rangedweapons.far) type='number' value='0')
+                input.input(name=attr(attrs.rangedweapons.far) type='number' value='0' min='0')
               .col-2
                 span(data-i18n=i18nize('Extreme')) Extreme
-                input.input(name=attr(attrs.rangedweapons.extreme) type='number' value='0')
+                input.input(name=attr(attrs.rangedweapons.extreme) type='number' value='0 min='0')

@@ -1,3 +1,4 @@
+const sheetCurrentVersion = '1.1';
 const sheetUpdateCallbacks = {
   '1.0': function() {
     logToConsole('Intro version. Updating to 1.1!');
@@ -8,6 +9,39 @@ const sheetUpdateCallbacks = {
     setAttrs({ sheet_version: '1.1' });
   }
 };
+
+const repeatingRemovedHandlers = {};
+const repeatingUpdatedHandlers = {};
+
+repeatingRemovedHandlers.rangedweapons = () => {
+  checkIfWeShouldShowSection('rangedweapons');
+};
+
+repeatingUpdatedHandlers.rangedweapons = () => {
+  checkIfWeShouldShowSection('rangedweapons');
+
+  // Recalc totals
+  getAttrs([
+    getRepeatingAttributeName('rangedweapons', attributenames.rangedweapons.close),
+    getRepeatingAttributeName('rangedweapons', attributenames.rangedweapons.extreme),
+    getRepeatingAttributeName('rangedweapons', attributenames.rangedweapons.far),
+    getRepeatingAttributeName('rangedweapons', attributenames.rangedweapons.medium),
+    getRepeatingAttributeName('rangedweapons', attributenames.rangedweapons.near)
+  ], (attrs) => {
+    console.log(attrs);
+  });
+};
+
+function checkIfWeShouldShowSection(section) {
+  getSectionIDs(section, (items) => {
+    const key = attributenames.settings[`has${section}`];
+    const setVal = items.length > 0 ? 1 : 0;
+
+    const providedVal = { [key]: setVal };
+    
+    setAttrs(providedVal);
+  });
+}
 
 function getAttributeName(incomingAttribute) {
   return incomingAttribute.name;
@@ -21,28 +55,16 @@ function getAttributeBonusName(incomingAttribute) {
   return `bonus-${incomingAttribute.name}`;
 }
 
+function getRepeatingAttributeName(section, name) {
+  return `repeating_${section}_${name}`;
+}
+
 function getViewName(view) {
   return `show-view-${view}`;
 }
 
 function logToConsole(output) {
   console.log('[SR6CS]: ', output);
-}
-
-function selectTheme(roll20event) {
-  if (roll20event.newValue == 1) {
-    setAttrs({ show_darkly: 1, show_minty: 0 });
-  } else if (roll20event.newValue == 2) {
-    setAttrs({ show_darkly: 0, show_minty: 1 });
-  }
-}
-
-function updateSheetVersion(currentVersion) {
-  logToConsole(`You are currently using sheet version ${currentVersion}`);
-    
-  if(sheetUpdateCallbacks[currentVersion]) {
-    sheetUpdateCallbacks[currentVersion]();
-  }
 }
 
 function onSheetOpened() {
@@ -52,7 +74,7 @@ function onSheetOpened() {
   // Grab the version
   getAttrs(['sheet_version'], (values) => {
     if (!values.sheet_version) {
-      setAttrs({ sheet_version: '1.0' });
+      setAttrs({ sheet_version: sheetCurrentVersion });
       return;
     }
 
@@ -60,8 +82,18 @@ function onSheetOpened() {
   });
 }
 
-function removeRepeating(roll20event) {
-  logToConsole(roll20event);
+function removeRepeating(section) {
+  if (repeatingRemovedHandlers[section]) {
+    repeatingRemovedHandlers[section]();
+  }
+}
+
+function selectTheme(roll20event) {
+  if (roll20event.newValue == 1) {
+    setAttrs({ show_darkly: 1, show_minty: 0 });
+  } else if (roll20event.newValue == 2) {
+    setAttrs({ show_darkly: 0, show_minty: 1 });
+  }
 }
 
 function updateAttribute(attr) {
@@ -83,8 +115,18 @@ function updateAttributeTotal(attr) {
   });
 }
 
-function updateRepeating(roll20event) {
-  logToConsole(roll20event);
+function updateRepeating(section) {
+  if (repeatingUpdatedHandlers[section]) {
+    repeatingUpdatedHandlers[section]();
+  }
+}
+
+function updateSheetVersion(currentVersion) {
+  logToConsole(`You are currently using sheet version ${currentVersion}`);
+    
+  if(sheetUpdateCallbacks[currentVersion]) {
+    sheetUpdateCallbacks[currentVersion]();
+  }
 }
 
 function updateView(selectedView) {
@@ -101,8 +143,8 @@ on('sheet:opened', onSheetOpened);
 var attributeArray = Object.values(attributes);
 var attributenamekeys = Object.keys(attributenames);
 
-attributenamekeys.forEach(x => on(`change:repeating_${x}`, (roll20event) => updateRepeating(roll20event)));
-attributenamekeys.forEach(x => on(`delete:repeating_${x}`, (roll20event) => removeRepeating(roll20event)));
+attributenamekeys.forEach(x => on(`change:repeating_${x}`, (roll20event) => updateRepeating(x, roll20event)));
+attributenamekeys.forEach(x => on(`remove:repeating_${x}`, (roll20event) => removeRepeating(x, roll20event)));
 attributeArray.forEach(attribute => on(`change:${getAttributeName(attribute)}`, (roll20event) => updateAttribute(attribute, roll20event)));
 attributeArray.filter(x => x.hasBonus).forEach(attribute => on(`change:${getAttributeBonusName(attribute)}`, (roll20event) => updateAttributeTotal(attribute, roll20event)));
 views.forEach((view) => on(`clicked:showview-${view}`, (roll20event) => updateView(view, roll20event)));
